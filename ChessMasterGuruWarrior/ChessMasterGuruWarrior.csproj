@@ -16,10 +16,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Model\Piece\" />
-  </ItemGroup>
-
-  <ItemGroup>
     <EmbeddedResource Update="ViewViewModel\Game\GameView.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
