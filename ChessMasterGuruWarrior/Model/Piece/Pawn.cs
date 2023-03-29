@@ -10,7 +10,7 @@ namespace ChessMasterGuruWarrior.Model.Piece
         public bool HasMoved { get; set; }
 
         //HasMoved - pawn exclusive var
-        public Pawn(bool hasmoved, bool iswhite, int posx, int posy, string piecetype) : base(iswhite, posx, posy, piecetype)
+        public Pawn(bool hasmoved, bool iswhite, int posx, int posy) : base(iswhite, posx, posy)
         {
             HasMoved = hasmoved;
             //Optional: if ((iswhite = true AND rank 2) OR(iswhite = false AND rank 7)) --> hasmoved = no, else hasmoved = yes
