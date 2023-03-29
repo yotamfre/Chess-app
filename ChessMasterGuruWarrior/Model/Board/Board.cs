@@ -6,5 +6,6 @@ namespace ChessMasterGuruWarrior.Model.Board
 {
     public class Board
     {
+        public Piece.Piece[][] board;
     }
 }

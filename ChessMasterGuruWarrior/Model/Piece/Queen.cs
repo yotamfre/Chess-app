@@ -19,6 +19,12 @@ namespace ChessMasterGuruWarrior.Model.Piece
                 return null;
             }
 
+            //checks if the attempted move is on a piece of the users own color
+            if ((given_board.board[attemptedX][attemptedY] != null) && (given_board.board[attemptedX][attemptedY].IsWhite == IsWhite))
+            {
+                return null;
+            }
+
             //checks if move is diagonal
             if (Math.Abs(attemptedX - attemptedY) == Math.Abs(PosX - PosY))
             {
@@ -33,14 +39,40 @@ namespace ChessMasterGuruWarrior.Model.Piece
                         {
                             for (int y = PosY; y < 8; y++)
                             {
-                                if given_board.board[x][y]
+                                if ((given_board.board[x][y] != null) && ((x != attemptedX) ||(y != attemptedY)))
+                                {
+                                    return null;
+                                }
                             }
                         }
+                        makeMove(given_board, attemptedX, attemptedY);
+                    }
+                    //case move is below position in positive diagonal
+                    else
+                    {
+                        for (int x = PosX; x < 8; x--)
+                        {
+                            for (int y = PosY; y < 8; y--)
+                            {
+                                if ((given_board.board[x][y] != null) && ((x != attemptedX) || (y != attemptedY)))
+                                {
+                                    return null;
+                                }
+                            }
+                        }
+                        makeMove(given_board, attemptedX, attemptedY);
                     }
                 }
             }
 
             return null;
+        }
+
+        private Board.Board makeMove(Board.Board given_board, int attemptedX, int attemptedY)
+        {
+            given_board.board[attemptedX][attemptedY] = this;
+            given_board.board[PosX][PosY] = null;
+            return given_board;
         }
     }
 }
