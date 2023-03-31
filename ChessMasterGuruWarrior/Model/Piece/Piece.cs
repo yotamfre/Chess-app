@@ -9,16 +9,20 @@ namespace ChessMasterGuruWarrior.Model.Piece
         public bool IsWhite { get; set; }
         public int PosX { get; set; }
         public int PosY { get; set; }
-        public string Type { get; set; }
 
-        public Piece(bool is_white, int posx, int posy, string type)
+        public Piece(bool iswhite, int posx, int posy)
         {
-            bool IsWhite = is_white;
+            bool IsWhite = iswhite;
             int PosX = posx;
             int PosY = posy;
-            string Type = type;
         }
 
-
+        public Board.Board makeMove(Board.Board given_board, int attemptedX, int attemptedY)
+        {
+            given_board.board[attemptedX][attemptedY] = this;
+            given_board.board[PosX][PosY] = null;
+            return given_board;
+        }
     }
 }
+
