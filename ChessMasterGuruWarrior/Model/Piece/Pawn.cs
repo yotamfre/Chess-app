@@ -17,81 +17,38 @@ namespace ChessMasterGuruWarrior.Model.Piece
 
         }
 
-        public Board.Board Move(Board.Board given_board, int attemptedX, int attemptedY)
+        public string[] CheckLegalMoves(/*Board Board.board*/)
         {
-            if (IsWhite == true) // Moves for WHITE piees
+            var PossibleMoves = new ArrayList();
+
+            if (board[PosX - 1][PosY - 1].IsWhite != this.IsWhite) //Take left
             {
-                if (given_board.board[PosX - 1, PosY - 1].IsWhite != this.IsWhite) //Take left
-                {
-                    return makeMove(given_board, attemptedX, attemptedY);
-                }
-
-                if (given_board.board[PosX - 1, PosY + 1].IsWhite != this.IsWhite) //Take right
-                {
-                    return makeMove(given_board, attemptedX, attemptedY);
-                }
-
-                if (given_board.board[PosX - 1, PosY] == null) //Move up 1
-                {
-                    return makeMove (given_board, attemptedX, attemptedY);
-                }
-                if (given_board.board[PosX - 2, PosY] == null && HasMoved == false) //Move up 2  ------ NEED to add a var that tracks 1 move AFTER a pawn moves 2 spaces --> in order to do en pasant
-                {
-                    return makeMove (given_board, attemptedX, attemptedY);
-                }
-
-
-                
-
-
-                //EN PASSANT:
-
+                PossibleMoves.Add((PosX - 1).ToString() + (PosY - 1).ToString());
             }
 
-            else //Moves for BLACK pieces
+            if (board[PosX - 1][PosY + 1] != this.IsWhite) //Take right
             {
-                if (given_board.board[PosX + 1, PosY - 1].IsWhite != this.IsWhite) //Take left
-                {
-                    return makeMove (given_board, attemptedX, attemptedY);
-                }
-
-                if (given_board.board[PosX + 1, PosY + 1].IsWhite != this.IsWhite) //Take right
-                {
-                    return makeMove (given_board, attemptedX, attemptedY);
-                }
-
-                if (given_board.board[PosX + 1, PosY] == null) //Move up 1
-                {
-                    return makeMove (given_board, attemptedX, attemptedY);
-                }
-                if (given_board.board[PosX + 2, PosY] == null && HasMoved == false) //Move up 2  ------ NEED to add a var that tracks 1 move AFTER a pawn moves 2 spaces --> in order to do en pasant
-                {
-                    return makeMove (given_board, attemptedX, attemptedY);
-                }
-
-
-                
-
-
-                //EN PASSANT:
+                PossibleMoves.Add((PosX - 1).ToString() + (PosY + 1).ToString());
             }
 
-            return null;
-        }
-
-
-        private Board.Board makeMove(Board.Board given_board, int attemptedX, int attemptedY)
-        {
-            //check for PROMOTION
-            if ((attemptedX == 0 && IsWhite == false) || (attemptedX == 7 && IsWhite == true))
+            if (Board[PosX - 1][PosY].piecetype.Equals(null)) //Move up 1
             {
-                //Call promotion
+                PossibleMoves.Add((PosX - 1).ToString() + (PosY).ToString());
+                if (Board[PosX - 2][PosY].piecetype.Equals(null) && HasMoved == false) //Move up 2  ------ NEED to add a var that tracks 1 move AFTER a pawn moves 2 spaces --> in order to do en pasant
+                {
+                    PossibleMoves.Add((PosX - 2).ToString() + (PosY).ToString());
+                }
             }
 
-            given_board.board[attemptedX, attemptedY] = this;
-            given_board.board[PosX, PosY] = null;
+            //Promotion Section
 
-            return given_board;
+            if ((PosX == 0 && IsWhite == true) || (PosX == 7 && IsWhite == false))
+            {
+                //CALL PROMOTION METHOD!!!
+            }
+
+            //En Pasant Section
+
         }
     }
 }
