@@ -26,7 +26,7 @@ namespace ChessMasterGuruWarrior.Model.Piece
             }
 
             //checks if the attempted move is on a piece of the users own color
-            if ((given_board.board[attemptedX][attemptedY] != null) && (given_board.board[attemptedX][attemptedY].IsWhite == IsWhite))
+            if ((given_board.board[attemptedX, attemptedY] != null) && (given_board.board[attemptedX, attemptedY].IsWhite == IsWhite))
             {
                 return null;
             }
@@ -44,7 +44,7 @@ namespace ChessMasterGuruWarrior.Model.Piece
                         for (int i = 1; i < Math.Abs(attemptedX - PosX); i++)
                         {
 
-                            if (given_board.board[PosX + i][PosY + i] != null)
+                            if (given_board.board[PosX + i, PosY + i] != null)
                             {
                                 return null;
 
@@ -58,7 +58,7 @@ namespace ChessMasterGuruWarrior.Model.Piece
                         for (int i = 1; i < Math.Abs(attemptedX - PosX); i++)
                         {
 
-                            if (given_board.board[PosX - i][PosY - i] != null)
+                            if (given_board.board[PosX - i, PosY - i] != null)
                             {
                                 return null;
 
@@ -77,7 +77,7 @@ namespace ChessMasterGuruWarrior.Model.Piece
                         for (int i = 1; i < Math.Abs(attemptedX - PosX); i++)
                         {
 
-                            if (given_board.board[PosX + i][PosY - i] != null)
+                            if (given_board.board[PosX + i, PosY - i] != null)
                             {
                                 return null;
 
@@ -91,7 +91,7 @@ namespace ChessMasterGuruWarrior.Model.Piece
                         for (int i = 1; i < Math.Abs(attemptedX - PosX); i++)
                         {
 
-                            if (given_board.board[PosX - i][PosY + i] != null)
+                            if (given_board.board[PosX - i, PosY + i] != null)
                             {
                                 return null;
 
@@ -112,7 +112,7 @@ namespace ChessMasterGuruWarrior.Model.Piece
                     for (int i = 1; i < Math.Abs(attemptedX - PosX); i++)
                     {
 
-                        if (given_board.board[PosX][PosY + i] != null)
+                        if (given_board.board[PosX, PosY + i] != null)
                         {
                             return null;
                         }
@@ -125,7 +125,7 @@ namespace ChessMasterGuruWarrior.Model.Piece
                     for (int i = 1; i < Math.Abs(attemptedX - PosX); i++)
                     {
 
-                        if (given_board.board[PosX][PosY - i] != null)
+                        if (given_board.board[PosX, PosY - i] != null)
                         {
                             return null;
                         }
@@ -143,7 +143,7 @@ namespace ChessMasterGuruWarrior.Model.Piece
                     for (int i = 1; i < Math.Abs(attemptedY - PosY); i++)
                     {
 
-                        if (given_board.board[PosX - i][PosY] != null)
+                        if (given_board.board[PosX - i, PosY] != null)
                         {
                             return null;
                         }
@@ -156,7 +156,7 @@ namespace ChessMasterGuruWarrior.Model.Piece
                     for (int i = 1; i < Math.Abs(attemptedY - PosY); i++)
                     {
 
-                        if (given_board.board[PosX - i][PosY] != null)
+                        if (given_board.board[PosX - i, PosY] != null)
                         {
                             return null;
                         }

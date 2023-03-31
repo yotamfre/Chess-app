@@ -21,27 +21,27 @@ namespace ChessMasterGuruWarrior.Model.Piece
         {
             if (IsWhite == true) // Moves for WHITE piees
             {
-                if (given_board.board[PosX - 1, PosY - 1].IsWhite != this.IsWhite) //Take left
+                if (given_board.board[PosX - 1][PosY - 1].IsWhite != this.IsWhite) //Take left
                 {
                     return makeMove(given_board, attemptedX, attemptedY);
                 }
 
-                if (given_board.board[PosX - 1, PosY + 1].IsWhite != this.IsWhite) //Take right
+                if (given_board.board[PosX - 1][PosY + 1].IsWhite != this.IsWhite) //Take right
                 {
                     return makeMove(given_board, attemptedX, attemptedY);
                 }
 
-                if (given_board.board[PosX - 1, PosY] == null) //Move up 1
+                if (given_board.board[PosX - 1][PosY] == null) //Move up 1
                 {
-                    return makeMove(given_board, attemptedX, attemptedY);
+                    return makeMove (given_board, attemptedX, attemptedY);
                 }
-                if (given_board.board[PosX - 2, PosY] == null && HasMoved == false) //Move up 2  ------ NEED to add a var that tracks 1 move AFTER a pawn moves 2 spaces --> in order to do en pasant
+                if (given_board.board[PosX - 2][PosY] == null && HasMoved == false) //Move up 2  ------ NEED to add a var that tracks 1 move AFTER a pawn moves 2 spaces --> in order to do en pasant
                 {
-                    return makeMove(given_board, attemptedX, attemptedY);
+                    return makeMove (given_board, attemptedX, attemptedY);
                 }
 
 
-
+                
 
 
                 //EN PASSANT:
@@ -50,27 +50,27 @@ namespace ChessMasterGuruWarrior.Model.Piece
 
             else //Moves for BLACK pieces
             {
-                if (given_board.board[PosX + 1, PosY - 1].IsWhite != this.IsWhite) //Take left
+                if (given_board.board[PosX + 1][PosY - 1].IsWhite != this.IsWhite) //Take left
                 {
-                    return makeMove(given_board, attemptedX, attemptedY);
+                    return makeMove (given_board, attemptedX, attemptedY);
                 }
 
-                if (given_board.board[PosX + 1, PosY + 1].IsWhite != this.IsWhite) //Take right
+                if (given_board.board[PosX + 1][PosY + 1].IsWhite != this.IsWhite) //Take right
                 {
-                    return makeMove(given_board, attemptedX, attemptedY);
+                    return makeMove (given_board, attemptedX, attemptedY);
                 }
 
-                if (given_board.board[PosX + 1, PosY] == null) //Move up 1
+                if (given_board.board[PosX + 1][PosY] == null) //Move up 1
                 {
-                    return makeMove(given_board, attemptedX, attemptedY);
+                    return makeMove (given_board, attemptedX, attemptedY);
                 }
-                if (given_board.board[PosX + 2, PosY] == null && HasMoved == false) //Move up 2  ------ NEED to add a var that tracks 1 move AFTER a pawn moves 2 spaces --> in order to do en pasant
+                if (given_board.board[PosX + 2][PosY] == null && HasMoved == false) //Move up 2  ------ NEED to add a var that tracks 1 move AFTER a pawn moves 2 spaces --> in order to do en pasant
                 {
-                    return makeMove(given_board, attemptedX, attemptedY);
+                    return makeMove (given_board, attemptedX, attemptedY);
                 }
 
 
-
+                
 
 
                 //EN PASSANT:
@@ -88,8 +88,8 @@ namespace ChessMasterGuruWarrior.Model.Piece
                 //Call promotion
             }
 
-            given_board.board[attemptedX, attemptedY] = this;
-            given_board.board[PosX, PosY] = null;
+            given_board.board[attemptedX][attemptedY] = this;
+            given_board.board[PosX][PosY] = null;
 
             return given_board;
         }
