@@ -16,6 +16,13 @@ namespace ChessMasterGuruWarrior.Model.Piece
             int PosX = posx;
             int PosY = posy;
         }
+
+        public Board.Board makeMove(Board.Board given_board, int attemptedX, int attemptedY)
+        {
+            given_board.board[attemptedX][attemptedY] = this;
+            given_board.board[PosX][PosY] = null;
+            return given_board;
+        }
     }
 }
 
