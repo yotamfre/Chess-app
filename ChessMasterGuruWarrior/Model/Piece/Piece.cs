@@ -9,13 +9,16 @@ namespace ChessMasterGuruWarrior.Model.Piece
         public bool IsWhite { get; set; }
         public int PosX { get; set; }
         public int PosY { get; set; }
+        public string Type { get; set; }
 
-        public Piece(bool iswhite, int posx, int posy)
+        public Piece(bool is_white, int posx, int posy, string type)
         {
-            bool IsWhite = iswhite;
+            bool IsWhite = is_white;
             int PosX = posx;
             int PosY = posy;
+            string Type = type;
         }
+
+
     }
 }
-
