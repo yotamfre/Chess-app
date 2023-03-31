@@ -13,6 +13,12 @@ namespace ChessMasterGuruWarrior.Model.Piece
 
         public Board.Board move(Board.Board given_board, int attemptedX, int attemptedY)
         {
+            //checks if the king is in check
+            if (makeMove(given_board, attemptedX, attemptedY).IsInCheck(IsWhite))
+            {
+                return null;
+            }
+
             //checks that move is not to the same spot the piece is already in
             if ((attemptedX == PosX) && (attemptedY == PosY))
             {
