@@ -21,7 +21,19 @@ namespace ChessMasterGuruWarrior.Model.Board
             board = new Piece.Piece[8,8];
         }
 
-        
+        public Piece.Piece[] getRow(int row)
+        {
+            Piece.Piece[] arr = new Piece.Piece[8];
+
+            for (int i = 0; i < 8; i++)
+            {
+                arr[i] = board[row, i];
+            }
+
+            return arr;
+        }
+
+
 
         public void MakeBoard()
         {
@@ -99,7 +111,7 @@ namespace ChessMasterGuruWarrior.Model.Board
             }
             
 
-            //check for all possible knight checks from line 103 to line 165
+            //check for knight checks
             if (KingX + 2 < 8 && KingY + 1 < 8)
             {
                 if (board[KingX + 2, KingY + 1].GetType() == typeof(Knight) && board[KingX + 2, KingY + 1].IsWhite != is_white)
@@ -163,14 +175,11 @@ namespace ChessMasterGuruWarrior.Model.Board
                     return true;
                 }
             }
-            //instantiates position variables helpful for determining check in the rows, collumns, and diagonals 
             int a = KingX + 1;
             int b = KingX - 1;
             int c = KingY + 1;
             int d = KingY - 1;
-            //Checks for Rook/Queen check (rows and collumns)
-
-            //checks in + X
+            //Checks for Rook/Queen check
             while (a < 8 && board[a, KingY].IsWhite != is_white)
             {
                 if((board[a, KingY].GetType() == typeof(Queen)) && (board[a, KingY].IsWhite != is_white))
@@ -184,7 +193,7 @@ namespace ChessMasterGuruWarrior.Model.Board
                 }
                 a++;
             }
-            //Checks in - X
+
             while (b >= 0 && board[b, KingY].IsWhite != is_white)
             {
                 if ((board[b, KingY].GetType() == typeof(Queen)) && (board[b, KingY].IsWhite != is_white))
@@ -198,7 +207,7 @@ namespace ChessMasterGuruWarrior.Model.Board
                 }
                 b--;
             }
-            //Checks in + Y
+
             while (c < 8 && board[KingX, c].IsWhite != is_white)
             {
                 if ((board[KingX, c].GetType() == typeof(Queen)) && (board[KingX, c].IsWhite != is_white))
@@ -212,7 +221,7 @@ namespace ChessMasterGuruWarrior.Model.Board
                 }
                 c++;
             }
-            //Checks in - Y
+
             while (d >= 0 && board[KingX, d].IsWhite != is_white)
             {
                 if ((board[KingX, d].GetType() == typeof(Queen)) && (board[KingX, d].IsWhite != is_white))
@@ -226,7 +235,7 @@ namespace ChessMasterGuruWarrior.Model.Board
                 }
                 d++;
             }
-            // Checks + X and + Y diagonal
+
             while (a < 8 && board[a, c].IsWhite != is_white && c < 8)
             {
                 if ((board[a, c].GetType() == typeof(Queen)) && (board[a, c].IsWhite != is_white))
@@ -241,8 +250,8 @@ namespace ChessMasterGuruWarrior.Model.Board
                 a++;
                 c++;
             }
-            // Checks + X and - Y diagonal
-            while (a < 8 && board[a, d].IsWhite != is_white && d >= 0)
+
+            while (a < 8 && board[a, c].IsWhite != is_white && d < 8)
             {
                 if ((board[a, d].GetType() == typeof(Queen)) && (board[a, d].IsWhite != is_white))
                 {
@@ -256,7 +265,7 @@ namespace ChessMasterGuruWarrior.Model.Board
                 a++;
                 d--;
             }
-            // Checks - X and + Y diagonal
+
             while (b >= 0 && board[b, c].IsWhite != is_white && c < 8)
             {
                 if ((board[b, c].GetType() == typeof(Queen)) && (board[b, c].IsWhite != is_white))
@@ -271,15 +280,15 @@ namespace ChessMasterGuruWarrior.Model.Board
                 b--;
                 c++;
             }
-            // Checks - X and - Y diagonal
-            while (b >= 0 && board[b, d].IsWhite != is_white && d >= 0)
+
+            while (b >= 0 && board[b, c].IsWhite != is_white && d >= 0)
             {
-                if ((board[b, d].GetType() == typeof(Queen)) && (board[b, d].IsWhite != is_white))
+                if ((board[b, c].GetType() == typeof(Queen)) && (board[b, c].IsWhite != is_white))
                 {
                     return true;
                 }
 
-                if ((board[b, d].GetType() == typeof(Bishop)) && (board[b, d].IsWhite != is_white))
+                if ((board[b, c].GetType() == typeof(Bishop)) && (board[b, c].IsWhite != is_white))
                 {
                     return true;
                 }

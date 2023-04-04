@@ -15,6 +15,7 @@ namespace ChessMasterGuruWarrior.ViewViewModel.Game
         public GameView()
         {
             InitializeComponent();
+            this.BindingContext = new GameViewModel();
         }
     }
 }
