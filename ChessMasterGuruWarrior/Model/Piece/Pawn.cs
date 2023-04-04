@@ -19,14 +19,20 @@ namespace ChessMasterGuruWarrior.Model.Piece
 
         public Board.Board Move(Board.Board given_board, int attemptedX, int attemptedY)
         {
+            //checks if the king is in check
+            if (makeMove(given_board, attemptedX, attemptedY).IsInCheck(IsWhite))
+            {
+                return null;
+            }
+
             if (IsWhite == true) // Moves for WHITE piees
             {
-                if (given_board.board[PosX - 1, PosY - 1].IsWhite != this.IsWhite) //Take left
+                if (given_board.board[PosX - 1, PosY - 1] != null && given_board.board[PosX - 1, PosY - 1].IsWhite != this.IsWhite) //Take left
                 {
                     return makeMove(given_board, attemptedX, attemptedY);
                 }
 
-                if (given_board.board[PosX - 1, PosY + 1].IsWhite != this.IsWhite) //Take right
+                if (given_board.board[PosX - 1, PosY + 1] != null && given_board.board[PosX - 1, PosY + 1].IsWhite != this.IsWhite) //Take right
                 {
                     return makeMove(given_board, attemptedX, attemptedY);
                 }
@@ -50,12 +56,12 @@ namespace ChessMasterGuruWarrior.Model.Piece
 
             else //Moves for BLACK pieces
             {
-                if (given_board.board[PosX + 1,PosY - 1].IsWhite != this.IsWhite) //Take left
+                if (given_board.board[PosX + 1, PosY - 1] != null && given_board.board[PosX + 1,PosY - 1].IsWhite != this.IsWhite) //Take left
                 {
                     return makeMove (given_board, attemptedX, attemptedY);
                 }
 
-                if (given_board.board[PosX + 1, PosY + 1].IsWhite != this.IsWhite) //Take right
+                if (given_board.board[PosX + 1, PosY + 1] != null && given_board.board[PosX + 1, PosY + 1].IsWhite != this.IsWhite) //Take right
                 {
                     return makeMove (given_board, attemptedX, attemptedY);
                 }

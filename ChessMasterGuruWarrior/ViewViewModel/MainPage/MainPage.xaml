@@ -2,15 +2,27 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="ChessMasterGuruWarrior.MainPage"
-             BackgroundColor="Green">
+             BackgroundColor="#D9C3A8"
+             >
 
     <StackLayout>
-        <Frame BackgroundColor="#2196F3" Padding="24" CornerRadius="0">
-            <Label Text="Chess Master Guru Warrior Legend" HorizontalTextAlignment="Center" TextColor="DarkBlue" FontSize="36" FontAttributes="Bold"/>
+        <Frame BackgroundColor="#876944" Padding="24" CornerRadius="0">
+            <Label Text="Chess Master Guru Warrior Legend" HorizontalTextAlignment="Center" TextColor="white" FontSize="36" FontAttributes="Bold"/>
         </Frame>
-        <Button Text="New Game" Command="{Binding OnNewGameClicked}"/>
-        <Button Text="Settings" Command="{Binding OnSettingsClicked}"/>
-        
-    </StackLayout>
 
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="75"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="1*"/>
+            </Grid.ColumnDefinitions>
+
+            <Button Grid.Row="0" Grid.Column="0" Text="New Game" Command="{Binding OnNewGameClicked}"/>
+            <Button Grid.Row="0" Grid.Column="1" Text="Settings" Command="{Binding OnSettingsClicked}"/>
+            
+
+        </Grid>        
+
+    </StackLayout>
 </ContentPage>
