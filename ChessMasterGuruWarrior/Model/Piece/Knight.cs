@@ -6,9 +6,11 @@ namespace ChessMasterGuruWarrior.Model.Piece
 {
     class Knight : Piece
     {
+
+
         public Knight(bool iswhite, int posx, int posy) : base(iswhite, posx, posy)
         {
-
+            Name = "Knight";
         }
 
         public Board.Board move(Board.Board given_board, int attemptedX, int attemptedY)

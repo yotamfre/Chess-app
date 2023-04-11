@@ -7,6 +7,7 @@ namespace ChessMasterGuruWarrior.Model.Piece
 {
     public class Pawn : Piece
     {
+
         public bool HasMoved { get; set; }
 
         //HasMoved - pawn exclusive var
@@ -14,6 +15,8 @@ namespace ChessMasterGuruWarrior.Model.Piece
         {
             HasMoved = hasmoved;
             //Optional: if ((iswhite = true AND rank 2) OR(iswhite = false AND rank 7)) --> hasmoved = no, else hasmoved = yes
+
+            Name = "Pawn";
 
         }
 

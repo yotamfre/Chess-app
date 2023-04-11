@@ -1,16 +1,50 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:model="clr-namespace:ChessMasterGuruWarrior.Model.Piece"
              x:Class="ChessMasterGuruWarrior.ViewViewModel.Game.GameView"
-             BackgroundColor="Green">
+             Title="Game">
 
-    <Grid>
-        <Grid.RowDefinitions>
-            <RowDefinition Height="*"/>
-        </Grid.RowDefinitions>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="*"/>
-        </Grid.ColumnDefinitions>
-        
-    </Grid>
+
+
+    <CollectionView x:Name="ItemsListView2d"
+                    ItemsSource="{Binding gameBoard}">
+        <CollectionView.ItemTemplate>
+
+            <DataTemplate x:Name ="gameBoardView"
+                          x:DataType="CollectionView">
+
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="75"/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto"/>
+                    </Grid.ColumnDefinitions>
+
+                    <CollectionView x:Name="ItemsListView"
+                                        ItemsSource= "{Binding}"
+                                        ItemsLayout="HorizontalList">
+                        <CollectionView.ItemTemplate>
+                            <DataTemplate x:DataType="model:Piece">
+
+                                <StackLayout>
+                                    <!--<Label Text="Test" 
+                                               Grid.Row="0"
+                                            Grid.Column="0"/>-->
+
+                                    <Label Text="{Binding Name}"
+                                             Grid.Row="{Binding PosX}"
+                                            Grid.Column="{Binding PosY}"/>
+
+                                </StackLayout>
+                            </DataTemplate>
+                        </CollectionView.ItemTemplate>
+
+                    </CollectionView>
+                </Grid>
+            </DataTemplate>
+
+
+        </CollectionView.ItemTemplate>
+    </CollectionView>
 </ContentPage>
