@@ -6,6 +6,8 @@ namespace ChessMasterGuruWarrior.Model.Piece
 {
     public class Piece
     {
+        public string Name { get; set; }
+
         public bool IsWhite { get; set; }
         public int PosX { get; set; }
         public int PosY { get; set; }

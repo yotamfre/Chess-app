@@ -1,16 +1,63 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:model="clr-namespace:ChessMasterGuruWarrior.Model.Piece"
              x:Class="ChessMasterGuruWarrior.ViewViewModel.Game.GameView"
-             BackgroundColor="Green">
+             BackgroundColor="Green"
+             Title="Game">
+
 
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
-        
+
+        <CollectionView x:Name="ItemsListView2d"
+                    ItemsSource="{Binding gameBoard}"
+                    ItemsLayout="VerticalList">
+
+        <CollectionView.ItemTemplate>
+            <DataTemplate x:Name ="gameBoardView"
+                          x:DataType="CollectionView">
+
+                <CollectionView x:Name="ItemsListView"
+                    ItemsSource= "{Binding}"
+                    ItemsLayout="HorizontalList">
+
+                        <CollectionView.ItemTemplate>
+                            <DataTemplate x:DataType="model:Piece">
+
+
+                                <StackLayout  Padding="10" x:Name="PersonNames">
+                                    <Label Text="{Binding PosX}"
+                                                Grid.Row="{Binding PosX}"
+                                                Grid.Column="{Binding PosY}"/>
+
+                                </StackLayout>
+
+                            </DataTemplate>
+                        </CollectionView.ItemTemplate>
+
+                    </CollectionView>
+            </DataTemplate>
+
+        </CollectionView.ItemTemplate>
+    </CollectionView>
     </Grid>
 </ContentPage>

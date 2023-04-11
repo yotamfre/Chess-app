@@ -8,7 +8,7 @@ namespace ChessMasterGuruWarrior.Model.Piece
     {
         public Rook(bool iswhite, int posx, int posy) : base(iswhite, posx, posy)
         {
-
+            Name = "Rook";
         }
 
         public Board.Board move(Board.Board given_board, int attemptedX, int attemptedY)

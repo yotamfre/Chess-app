@@ -11,7 +11,8 @@ namespace ChessMasterGuruWarrior.ViewViewModel.Game
     class GameViewModel
     {
         private Board game_board { get; set; }
-        public ObservableCollection<ObservableCollection<Piece>> gameBoard { get; }
+        public ObservableCollection<ObservableCollection<Piece>> gameBoard { get; set; }
+        public ObservableCollection<Piece> gameBoardOneRow { get; set; }
 
 
         public GameViewModel()
@@ -27,7 +28,9 @@ namespace ChessMasterGuruWarrior.ViewViewModel.Game
         {
             for (int r = 0; r < 8; r++)
             {
-                gameBoard.Add(new ObservableCollection<Piece>(game_board.getRow(r).ToList()));
+                ObservableCollection<Piece> row = new ObservableCollection<Piece>(game_board.getRow(r).ToList());
+                gameBoardOneRow = row;
+                gameBoard.Add(row);
             }
         }
     }
