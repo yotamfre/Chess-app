@@ -7,6 +7,7 @@ namespace ChessMasterGuruWarrior.Model.Piece
     public class Piece
     {
         public string Name { get; set; }
+        public string Color { get; set; }
 
         public bool IsWhite { get; set; }
         public int PosX { get; set; }
@@ -17,6 +18,8 @@ namespace ChessMasterGuruWarrior.Model.Piece
             bool IsWhite = iswhite;
             int PosX = posx;
             int PosY = posy;
+
+            getColor();
         }
 
         public Board.Board makeMove(Board.Board given_board, int attemptedX, int attemptedY)
@@ -29,6 +32,20 @@ namespace ChessMasterGuruWarrior.Model.Piece
 
             return given_board;
         }
+
+        public void getColor()
+        {
+            if (((PosX + PosY) % 2) == 0)
+            {
+                Color = "#FFFFFF";
+            }
+            else
+            {
+                Color = "#000000";
+            }
+        }
+
+
     }
 }
 
