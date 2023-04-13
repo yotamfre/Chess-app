@@ -11,7 +11,6 @@ namespace ChessMasterGuruWarrior.Model.Piece
         public ImageSource ImageSrc { get; set; }
 
         public string Name { get; set; }
-        public string Color { get; set; }
 
         public bool IsWhite { get; set; }
         public int PosX { get; set; }
@@ -23,7 +22,6 @@ namespace ChessMasterGuruWarrior.Model.Piece
             int PosX = posx;
             int PosY = posy;
 
-            getColor();
             ImageSrc = ImageSource.FromResource("ChessMasterGuruWarrior.Images.chessImage.jpg");
         }
 
@@ -33,23 +31,17 @@ namespace ChessMasterGuruWarrior.Model.Piece
             PosY = attemptedY;
 
             given_board.board[attemptedX, attemptedY] = this;
-            given_board.board[PosX, PosY] = null;
+
+            bool is_white = false;
+            if (((PosX + PosY) % 2) == 0)
+            {
+                is_white = true;
+            }
+
+            given_board.board[PosX, PosY] = new EmptySquare(is_white, PosX, PosY);
 
             return given_board;
         }
-
-        public void getColor()
-        {
-            if (((PosX + PosY) % 2) == 0)
-            {
-                Color = "#FFFFFF";
-            }
-            else
-            {
-                Color = "#000000";
-            }
-        }
-
 
     }
 }

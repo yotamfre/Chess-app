@@ -9,7 +9,7 @@ namespace ChessMasterGuruWarrior.Model.Piece
 
         public EmptySquare(bool iswhite, int posx, int posy) : base(iswhite, posx, posy)
         {
-            Name = "Bishop";
+            Name = "empty";
         }
     }
 }
