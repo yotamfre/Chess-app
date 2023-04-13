@@ -73,7 +73,10 @@ namespace ChessMasterGuruWarrior.Model.Board
             board[6, 5] = new Pawn(false, false, 7, 5);
             board[6, 6] = new Pawn(false, false, 7, 6);
             board[6, 7] = new Pawn(false, false, 7, 7);
-            bool Is_White = false;
+
+            //Determines color of empty square and instantiates it
+            bool Is_White;
+
             for(int x = 2; x < 6; x++)
             {
                 for (int y = 0; y < 8; y++)
@@ -115,6 +118,7 @@ namespace ChessMasterGuruWarrior.Model.Board
             //finds position of the king
             int KingX = 0;
             int KingY = 0;
+
             for(int r = 0; r < 8; r++)
             {
                 for(int n = 0; n < 8; n++)
@@ -198,6 +202,7 @@ namespace ChessMasterGuruWarrior.Model.Board
             int c = KingY + 1;
             int d = KingY - 1;
             bool e = false;
+
             //Checks for Rook/Queen check
             while (a < 8 && board[a, KingY].IsWhite != is_white && e == false)
             {
@@ -216,6 +221,7 @@ namespace ChessMasterGuruWarrior.Model.Board
                 {
                     e = true;
                 }
+
                 a++;
             }
 
@@ -241,6 +247,7 @@ namespace ChessMasterGuruWarrior.Model.Board
                 {
                     e = true;
                 }
+
                 b--;
 
             }
@@ -267,6 +274,7 @@ namespace ChessMasterGuruWarrior.Model.Board
                 {
                     e = true;
                 }
+
                 c++;
             }
 
@@ -292,7 +300,8 @@ namespace ChessMasterGuruWarrior.Model.Board
                 {
                     e = true;
                 }
-                d++;
+
+                d--;
             }
 
             a = KingX + 1;
@@ -317,6 +326,7 @@ namespace ChessMasterGuruWarrior.Model.Board
                 {
                     e = true;
                 }
+
                 a++;
                 c++;
             }
@@ -327,7 +337,7 @@ namespace ChessMasterGuruWarrior.Model.Board
             d = KingY - 1;
             e = false;
 
-            while (a < 8 && board[a, c].IsWhite != is_white && d < 8 && e == false)
+            while (a < 8 && board[a, c].IsWhite != is_white && d >= 0 && e == false)
             {
                 if ((board[a, d].GetType() == typeof(Queen)) && (board[a, d].IsWhite != is_white))
                 {
@@ -343,6 +353,7 @@ namespace ChessMasterGuruWarrior.Model.Board
                 {
                     e = true;
                 }
+
                 a++;
                 d--;
             }
@@ -369,6 +380,7 @@ namespace ChessMasterGuruWarrior.Model.Board
                 {
                     e = true;
                 }
+
                 b--;
                 c++;
             }
@@ -395,6 +407,7 @@ namespace ChessMasterGuruWarrior.Model.Board
                 {
                     e = true;
                 }
+
                 b--;
                 d--;
             }
