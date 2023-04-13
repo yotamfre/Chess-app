@@ -73,6 +73,14 @@ namespace ChessMasterGuruWarrior.Model.Board
             board[6, 5] = new Pawn(false, false, 7, 5);
             board[6, 6] = new Pawn(false, false, 7, 6);
             board[6, 7] = new Pawn(false, false, 7, 7);
+
+            for(int x = 2; x < 6; x++)
+            {
+                for (int y = 0; y < 8; y++)
+                {
+                    board[x, y] = new EmptySquare(null, x, y);
+                }
+            }
         }
         //for if we want type back
         //board[7, 0] = new Rook(false, 7, 0, "Rook");
@@ -175,13 +183,16 @@ namespace ChessMasterGuruWarrior.Model.Board
                     return true;
                 }
             }
+
             int a = KingX + 1;
             int b = KingX - 1;
             int c = KingY + 1;
             int d = KingY - 1;
+            bool e = false;
             //Checks for Rook/Queen check
-            while (a < 8 && board[a, KingY].IsWhite != is_white)
+            while (a < 8 && board[a, KingY].IsWhite != is_white && e == false)
             {
+
                 if((board[a, KingY].GetType() == typeof(Queen)) && (board[a, KingY].IsWhite != is_white))
                 {
                     return true;
@@ -191,10 +202,21 @@ namespace ChessMasterGuruWarrior.Model.Board
                 {
                     return true;
                 }
+
+                if (board[a, KingY].GetType() != typeof(EmptySquare))
+                {
+                    e = true;
+                }
                 a++;
             }
 
-            while (b >= 0 && board[b, KingY].IsWhite != is_white)
+            a = KingX + 1;
+            b = KingX - 1;
+            c = KingY + 1;
+            d = KingY - 1;
+            e = false;
+
+            while (b >= 0 && board[b, KingY].IsWhite != is_white && e == false)
             {
                 if ((board[b, KingY].GetType() == typeof(Queen)) && (board[b, KingY].IsWhite != is_white))
                 {
@@ -205,10 +227,22 @@ namespace ChessMasterGuruWarrior.Model.Board
                 {
                     return true;
                 }
+
+                if (board[b, KingY].GetType() != typeof(EmptySquare))
+                {
+                    e = true;
+                }
                 b--;
+
             }
 
-            while (c < 8 && board[KingX, c].IsWhite != is_white)
+            a = KingX + 1;
+            b = KingX - 1;
+            c = KingY + 1;
+            d = KingY - 1;
+            e = false;
+
+            while (c < 8 && board[KingX, c].IsWhite != is_white && e == false)
             {
                 if ((board[KingX, c].GetType() == typeof(Queen)) && (board[KingX, c].IsWhite != is_white))
                 {
@@ -219,10 +253,21 @@ namespace ChessMasterGuruWarrior.Model.Board
                 {
                     return true;
                 }
+
+                if (board[KingX, c].GetType() != typeof(EmptySquare))
+                {
+                    e = true;
+                }
                 c++;
             }
 
-            while (d >= 0 && board[KingX, d].IsWhite != is_white)
+            a = KingX + 1;
+            b = KingX - 1;
+            c = KingY + 1;
+            d = KingY - 1;
+            e = false;
+
+            while (d >= 0 && board[KingX, d].IsWhite != is_white && e == false)
             {
                 if ((board[KingX, d].GetType() == typeof(Queen)) && (board[KingX, d].IsWhite != is_white))
                 {
@@ -233,10 +278,21 @@ namespace ChessMasterGuruWarrior.Model.Board
                 {
                     return true;
                 }
+
+                if (board[KingX, d].GetType() != typeof(EmptySquare))
+                {
+                    e = true;
+                }
                 d++;
             }
 
-            while (a < 8 && board[a, c].IsWhite != is_white && c < 8)
+            a = KingX + 1;
+            b = KingX - 1;
+            c = KingY + 1;
+            d = KingY - 1;
+            e = false;
+
+            while (a < 8 && board[a, c].IsWhite != is_white && c < 8 && e == false)
             {
                 if ((board[a, c].GetType() == typeof(Queen)) && (board[a, c].IsWhite != is_white))
                 {
@@ -247,11 +303,22 @@ namespace ChessMasterGuruWarrior.Model.Board
                 {
                     return true;
                 }
+
+                if (board[a, c].GetType() != typeof(EmptySquare))
+                {
+                    e = true;
+                }
                 a++;
                 c++;
             }
 
-            while (a < 8 && board[a, c].IsWhite != is_white && d < 8)
+            a = KingX + 1;
+            b = KingX - 1;
+            c = KingY + 1;
+            d = KingY - 1;
+            e = false;
+
+            while (a < 8 && board[a, c].IsWhite != is_white && d < 8 && e == false)
             {
                 if ((board[a, d].GetType() == typeof(Queen)) && (board[a, d].IsWhite != is_white))
                 {
@@ -262,9 +329,20 @@ namespace ChessMasterGuruWarrior.Model.Board
                 {
                     return true;
                 }
+
+                if (board[a, d].GetType() != typeof(EmptySquare))
+                {
+                    e = true;
+                }
                 a++;
                 d--;
             }
+
+            a = KingX + 1;
+            b = KingX - 1;
+            c = KingY + 1;
+            d = KingY - 1;
+            e = false;
 
             while (b >= 0 && board[b, c].IsWhite != is_white && c < 8)
             {
@@ -277,20 +355,36 @@ namespace ChessMasterGuruWarrior.Model.Board
                 {
                     return true;
                 }
+
+                if (board[b, c].GetType() != typeof(EmptySquare))
+                {
+                    e = true;
+                }
                 b--;
                 c++;
             }
 
-            while (b >= 0 && board[b, c].IsWhite != is_white && d >= 0)
+            a = KingX + 1;
+            b = KingX - 1;
+            c = KingY + 1;
+            d = KingY - 1;
+            e = false;
+
+            while (b >= 0 && board[b, d].IsWhite != is_white && d >= 0)
             {
-                if ((board[b, c].GetType() == typeof(Queen)) && (board[b, c].IsWhite != is_white))
+                if ((board[b, d].GetType() == typeof(Queen)) && (board[b, d].IsWhite != is_white))
                 {
                     return true;
                 }
 
-                if ((board[b, c].GetType() == typeof(Bishop)) && (board[b, c].IsWhite != is_white))
+                if ((board[b, d].GetType() == typeof(Bishop)) && (board[b, d].IsWhite != is_white))
                 {
                     return true;
+                }
+
+                if (board[b, d].GetType() != typeof(EmptySquare))
+                {
+                    e = true;
                 }
                 b--;
                 d--;

@@ -11,11 +11,11 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <None Remove="Images\chessImage.jpg" />
+    <None Remove="Model\Image\Logo.png" />
   </ItemGroup>
 
   <ItemGroup>
-    <EmbeddedResource Include="Images\chessImage.jpg" />
+    <EmbeddedResource Include="Model\Image\Logo.png" />
   </ItemGroup>
 
   <ItemGroup>
