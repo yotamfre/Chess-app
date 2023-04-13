@@ -73,12 +73,21 @@ namespace ChessMasterGuruWarrior.Model.Board
             board[6, 5] = new Pawn(false, false, 7, 5);
             board[6, 6] = new Pawn(false, false, 7, 6);
             board[6, 7] = new Pawn(false, false, 7, 7);
-
+            bool Is_White = false;
             for(int x = 2; x < 6; x++)
             {
                 for (int y = 0; y < 8; y++)
                 {
-                    board[x, y] = new EmptySquare(null, x, y);
+                    if(((x + y) % 2) == 0)
+                    {
+                        Is_White = true;
+                    }
+                    else
+                    {
+                        Is_White = false;
+                    }
+
+                    board[x, y] = new EmptySquare(Is_White, x, y);
                 }
             }
         }

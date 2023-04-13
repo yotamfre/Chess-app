@@ -28,7 +28,7 @@ namespace ChessMasterGuruWarrior.Model.Piece
             }
 
             //checks if the attempted move is on a piece of the users own color
-            if ((given_board.board[attemptedX, attemptedY] != null) && (given_board.board[attemptedX, attemptedY].IsWhite == IsWhite))
+            if ((given_board.board[attemptedX, attemptedY].GetType() != typeof(EmptySquare)) && (given_board.board[attemptedX, attemptedY].IsWhite == IsWhite))
             {
                 return null;
             }
