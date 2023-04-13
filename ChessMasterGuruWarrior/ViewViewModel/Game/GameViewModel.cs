@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
+using Xamarin.Forms;
 
 namespace ChessMasterGuruWarrior.ViewViewModel.Game
 {
@@ -21,6 +22,7 @@ namespace ChessMasterGuruWarrior.ViewViewModel.Game
 
             gameBoard = new ObservableCollection<ObservableCollection<Piece>>();
             this.loadBoard();
+
         }
 
         private void loadBoard()

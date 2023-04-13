@@ -1,11 +1,15 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using Xamarin.Forms;
 
 namespace ChessMasterGuruWarrior.Model.Piece
 {
     public class Piece
     {
+
+        public ImageSource ImageSrc { get; set; }
+
         public string Name { get; set; }
         public string Color { get; set; }
 
@@ -20,6 +24,7 @@ namespace ChessMasterGuruWarrior.Model.Piece
             int PosY = posy;
 
             getColor();
+            ImageSrc = ImageSource.FromResource("ChessMasterGuruWarrior.Images.chessImage.jpg");
         }
 
         public Board.Board makeMove(Board.Board given_board, int attemptedX, int attemptedY)
