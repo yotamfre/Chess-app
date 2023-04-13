@@ -15,6 +15,7 @@ namespace ChessMasterGuruWarrior.ViewViewModel.Settings
         public SettingsView()
         {
             InitializeComponent();
+            this.BindingContext = new SettingsViewModel();
         }
     }
 }
