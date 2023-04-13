@@ -4,14 +4,15 @@
              x:Class="ChessMasterGuruWarrior.ViewViewModel.Game.GameView"
              Title="Game">
 
-
+    <!--<StackLayout>
+        <Image Source="{Binding ImageSrc}"/>
+    </StackLayout>-->
 
     <CollectionView x:Name="ItemsListView2d"
                     ItemsSource="{Binding gameBoard}">
         <CollectionView.ItemTemplate>
 
-            <DataTemplate x:Name ="gameBoardView"
-                          x:DataType="CollectionView">
+            <DataTemplate x:Name ="gameBoardView">
 
                 <Grid>
                     <Grid.RowDefinitions>
@@ -28,13 +29,11 @@
                             <DataTemplate x:DataType="model:Piece">
 
                                 <StackLayout>
-                                    <!--<Label Text="Test" 
-                                               Grid.Row="0"
-                                            Grid.Column="0"/>-->
+                                    <ImageButton Source="{Binding ImageSrc}"/>
 
-                                    <Label Text="{Binding Name}"
+                                        <!--<Label Text="{Binding Name}"
                                              Grid.Row="{Binding PosX}"
-                                            Grid.Column="{Binding PosY}"/>
+                                            Grid.Column="{Binding PosY}"/>-->
 
                                 </StackLayout>
                             </DataTemplate>

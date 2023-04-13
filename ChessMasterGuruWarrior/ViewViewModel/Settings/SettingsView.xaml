@@ -13,17 +13,17 @@
             
             <!--Username-->
             <Label Text=" Username:" FontSize="20" TextColor="White" BackgroundColor="#876944"/>
-            <Entry IsSpellCheckEnabled="False" TextColor="Black" PlaceholderColor="White" Text="{Binding Username}" x:Name="Username"/>
+            <Entry IsSpellCheckEnabled="False" TextColor="Black" PlaceholderColor="White" Text="Default Username"/>
 
             <!--Email-->
             <Label Text=" Email:" FontSize="20" TextColor="White" BackgroundColor="#876944"/>
-            <Entry IsSpellCheckEnabled="False" TextColor="Black" PlaceholderColor="White" Text="Placeholder@example.com" BindingContext="x:Email"/>
+            <Entry IsSpellCheckEnabled="False" TextColor="Black" PlaceholderColor="White" Text="Placeholder@example.com"/>
 
         <!--GAME SETTINGS-->
             <Label Text="Game Settings" FontSize="30" TextColor="White" BackgroundColor="#5C4033" HorizontalTextAlignment="Center"/>
 
             <!--Enable Auto-Queen-->
-            <Label Text=" Enable Auto-Queen:" FontSize="20" TextColor="White" BackgroundColor="#876944" BindingContext="x:Auto-Queen"/>
+            <Label Text=" Enable Auto-Queen:" FontSize="20" TextColor="White" BackgroundColor="#876944"/>
             <Switch IsToggled="false" 
                     HorizontalOptions="Start">
             </Switch>

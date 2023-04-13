@@ -1,7 +1,6 @@
 ﻿using ChessMasterGuruWarrior.ViewViewModel.Base;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Text;
 
 namespace ChessMasterGuruWarrior.ViewViewModel.Settings
@@ -26,5 +25,3 @@ namespace ChessMasterGuruWarrior.ViewViewModel.Settings
         }
     }
 }
-
-

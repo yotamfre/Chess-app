@@ -8,10 +8,10 @@ using System.Text;
 
 namespace ChessMasterGuruWarrior.ViewViewModel.Game
 {
-    public class GameViewModel
+    class GameViewModel
     {
         private Board game_board { get; set; }
-        public ObservableCollection<ObservableCollection<Piece>> gameBoard { get; set; }
+        public ObservableCollection<ObservableCollection<Piece>> gameBoard { get; }
 
 
         public GameViewModel()
@@ -27,8 +27,7 @@ namespace ChessMasterGuruWarrior.ViewViewModel.Game
         {
             for (int r = 0; r < 8; r++)
             {
-                ObservableCollection<Piece> row = new ObservableCollection<Piece>(game_board.getRow(r).ToList());
-                gameBoard.Add(row);
+                gameBoard.Add(new ObservableCollection<Piece>(game_board.getRow(r).ToList()));
             }
         }
     }
