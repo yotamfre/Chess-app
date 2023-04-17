@@ -21,15 +21,21 @@
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="Auto"/>
                     </Grid.ColumnDefinitions>
+                    
+                    
 
                     <CollectionView x:Name="ItemsListView"
                                         ItemsSource= "{Binding}"
                                         ItemsLayout="HorizontalList">
+                        
+                        
                         <CollectionView.ItemTemplate>
+                            
                             <DataTemplate x:DataType="model:Piece">
 
                                 <StackLayout>
-                                    <ImageButton Source="{Binding ImageSrc}"/>
+                                    <ImageButton Source="{Binding ImageSrc}"
+                                                 Aspect="Fill"/>
 
                                         <!--<Label Text="{Binding Name}"
                                              Grid.Row="{Binding PosX}"

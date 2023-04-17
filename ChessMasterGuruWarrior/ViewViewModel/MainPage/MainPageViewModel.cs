@@ -15,11 +15,13 @@ namespace ChessMasterGuruWarrior.ViewViewModel.MainPage
 
         public ICommand OnSettingsClicked { get; set; }
 
+        public ImageSource EmbeddedImageSrc { get; set; }
 
         public MainPageViewModel()
         {
             OnNewGameClicked = new Command(OnNewGameClickedAsync);
             OnSettingsClicked = new Command(OnSettingsClickedAsync);
+            this.GetEmbeddedImageSrc();
         }
 
         private async void OnNewGameClickedAsync (object obj)
@@ -31,5 +33,11 @@ namespace ChessMasterGuruWarrior.ViewViewModel.MainPage
         {
             await Application.Current.MainPage.Navigation.PushAsync(new SettingsView());
         }
+
+        private void GetEmbeddedImageSrc()
+        {
+            EmbeddedImageSrc = ImageSource.FromResource("ChessMasterGuruWarrior.Model.Image.CMWGL Logo.png");
+        }
+
     }
 }

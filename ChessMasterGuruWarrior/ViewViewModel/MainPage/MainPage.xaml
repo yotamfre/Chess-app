@@ -9,7 +9,7 @@
         <Frame BackgroundColor="#876944" Padding="24" CornerRadius="0">
             <Label Text="Chess Master Guru Warrior Legend" HorizontalTextAlignment="Center" TextColor="white" FontSize="36" FontAttributes="Bold"/>
         </Frame>
-
+        
         <Grid>
             <Grid.RowDefinitions>
                 <RowDefinition Height="75"/>
@@ -21,8 +21,9 @@
             <Button Grid.Row="0" Grid.Column="0" Text="New Game" Command="{Binding OnNewGameClicked}"/>
             <Button Grid.Row="0" Grid.Column="1" Text="Settings" Command="{Binding OnSettingsClicked}"/>
             
-
-        </Grid>        
-
+        </Grid>
+        
+        <Image Source="{Binding EmbeddedImageSrc}" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand"/>
+        
     </StackLayout>
 </ContentPage>
