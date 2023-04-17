@@ -11,10 +11,12 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Model\Image\CMWGL Logo.png" />
     <None Remove="Model\Image\Logo.png" />
   </ItemGroup>
 
   <ItemGroup>
+    <EmbeddedResource Include="Model\Image\CMWGL Logo.png" />
     <EmbeddedResource Include="Model\Image\Logo.png" />
   </ItemGroup>
 
