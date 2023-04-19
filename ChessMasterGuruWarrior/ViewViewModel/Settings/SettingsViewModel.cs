@@ -17,9 +17,9 @@ namespace ChessMasterGuruWarrior.ViewViewModel.Settings
             get { return _username; }
             set
             {
-                if (_username != value)
+               /* if (_username != value)
                     SetProperty(ref _username, value);
-                SetProperty(ref _username, value); //SQL
+                SetProperty(ref _username, value); //SQL  */
             }
         }
 
