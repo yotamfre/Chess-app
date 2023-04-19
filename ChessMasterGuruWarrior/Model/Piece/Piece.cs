@@ -22,7 +22,7 @@ namespace ChessMasterGuruWarrior.Model.Piece
             int PosX = posx;
             int PosY = posy;
 
-            ImageSrc = ImageSource.FromResource("ChessMasterGuruWarrior.Images.chessImage.jpg");
+           ImageSrc = ImageSource.FromResource("ChessMasterGuruWarrior.Model.Image.Logo.png");
         }
 
         public Board.Board makeMove(Board.Board given_board, int attemptedX, int attemptedY)

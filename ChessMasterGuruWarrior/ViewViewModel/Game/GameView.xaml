@@ -9,7 +9,7 @@
     </StackLayout>-->
 
     <CollectionView x:Name="ItemsListView2d"
-                    ItemsSource="{Binding gameBoard}">
+                    ItemsSource="{Binding gameBoard, Mode=TwoWay}">
         <CollectionView.ItemTemplate>
 
             <DataTemplate x:Name ="gameBoardView">
@@ -21,8 +21,8 @@
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="Auto"/>
                     </Grid.ColumnDefinitions>
-                    
-                    
+
+
 
                     <CollectionView x:Name="ItemsListView"
                                         ItemsSource= "{Binding}"
@@ -34,12 +34,18 @@
                             <DataTemplate x:DataType="model:Piece">
 
                                 <StackLayout>
-                                    <ImageButton Source="{Binding ImageSrc}"
-                                                 Aspect="Fill"/>
+                                    <!--<ImageButton Source="{Binding ImageSrc}"
+                                                 Aspect="Fill"
+                                                 HeightRequest="50"
+                                                 WidthRequest="50"/>-->
 
-                                        <!--<Label Text="{Binding Name}"
-                                             Grid.Row="{Binding PosX}"
-                                            Grid.Column="{Binding PosY}"/>-->
+                                        <Button Text="{Binding Name}"
+                                                Grid.Row="{Binding PosX}"
+                                                Grid.Column="{Binding PosY}"
+                                                HeightRequest="50"
+                                                WidthRequest="50"
+                                                Command="{Binding Path=BindingContext.PieceClicked, Source={x:Reference ItemsListView}, Mode=TwoWay}"
+                                                CommandParameter="{Binding .}"/>
 
                                 </StackLayout>
                             </DataTemplate>
