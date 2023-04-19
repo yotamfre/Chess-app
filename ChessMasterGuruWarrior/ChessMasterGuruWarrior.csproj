@@ -13,11 +13,66 @@
   <ItemGroup>
     <None Remove="Model\Image\CMWGL Logo.png" />
     <None Remove="Model\Image\Logo.png" />
+    <None Remove="Model\Image\PieceImages\BB_BlackBishop.png" />
+    <None Remove="Model\Image\PieceImages\BB_BlackKing.png" />
+    <None Remove="Model\Image\PieceImages\BB_BlackKnight.png" />
+    <None Remove="Model\Image\PieceImages\BB_BlackPawn.png" />
+    <None Remove="Model\Image\PieceImages\BB_BlackQueen.png" />
+    <None Remove="Model\Image\PieceImages\BB_BlackRook.png" />
+    <None Remove="Model\Image\PieceImages\BB_Empty.png" />
+    <None Remove="Model\Image\PieceImages\BB_WhiteBishop.png" />
+    <None Remove="Model\Image\PieceImages\BB_WhiteKing.png" />
+    <None Remove="Model\Image\PieceImages\BB_WhiteKnight.png" />
+    <None Remove="Model\Image\PieceImages\BB_WhitePawn.png" />
+    <None Remove="Model\Image\PieceImages\BB_WhiteQueen.png" />
+    <None Remove="Model\Image\PieceImages\BB_WhiteRook.png" />
+    <None Remove="Model\Image\PieceImages\WB_BlackBishop.png" />
+    <None Remove="Model\Image\PieceImages\WB_BlackKing.png" />
+    <None Remove="Model\Image\PieceImages\WB_BlackKnight.png" />
+    <None Remove="Model\Image\PieceImages\WB_BlackPawn.png" />
+    <None Remove="Model\Image\PieceImages\WB_BlackQueen.png" />
+    <None Remove="Model\Image\PieceImages\WB_BlackRook.png" />
+    <None Remove="Model\Image\PieceImages\WB_Empty.png" />
+    <None Remove="Model\Image\PieceImages\WB_WhiteBishop.png" />
+    <None Remove="Model\Image\PieceImages\WB_WhiteKing.png" />
+    <None Remove="Model\Image\PieceImages\WB_WhiteKnight.png" />
+    <None Remove="Model\Image\PieceImages\WB_WhitePawn.png" />
+    <None Remove="Model\Image\PieceImages\WB_WhiteQueen.png" />
+    <None Remove="Model\Image\PieceImages\WB_WhiteRook.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="Model\Image\PieceImages\WB_BlackBishop.png" />
   </ItemGroup>
 
   <ItemGroup>
     <EmbeddedResource Include="Model\Image\CMWGL Logo.png" />
     <EmbeddedResource Include="Model\Image\Logo.png" />
+    <EmbeddedResource Include="Model\Image\PieceImages\BB_BlackBishop.png" />
+    <EmbeddedResource Include="Model\Image\PieceImages\BB_BlackKing.png" />
+    <EmbeddedResource Include="Model\Image\PieceImages\BB_BlackKnight.png" />
+    <EmbeddedResource Include="Model\Image\PieceImages\BB_BlackPawn.png" />
+    <EmbeddedResource Include="Model\Image\PieceImages\BB_BlackQueen.png" />
+    <EmbeddedResource Include="Model\Image\PieceImages\BB_BlackRook.png" />
+    <EmbeddedResource Include="Model\Image\PieceImages\BB_Empty.png" />
+    <EmbeddedResource Include="Model\Image\PieceImages\BB_WhiteBishop.png" />
+    <EmbeddedResource Include="Model\Image\PieceImages\BB_WhiteKing.png" />
+    <EmbeddedResource Include="Model\Image\PieceImages\BB_WhiteKnight.png" />
+    <EmbeddedResource Include="Model\Image\PieceImages\BB_WhitePawn.png" />
+    <EmbeddedResource Include="Model\Image\PieceImages\BB_WhiteQueen.png" />
+    <EmbeddedResource Include="Model\Image\PieceImages\BB_WhiteRook.png" />
+    <EmbeddedResource Include="Model\Image\PieceImages\WB_BlackKing.png" />
+    <EmbeddedResource Include="Model\Image\PieceImages\WB_BlackKnight.png" />
+    <EmbeddedResource Include="Model\Image\PieceImages\WB_BlackPawn.png" />
+    <EmbeddedResource Include="Model\Image\PieceImages\WB_BlackQueen.png" />
+    <EmbeddedResource Include="Model\Image\PieceImages\WB_BlackRook.png" />
+    <EmbeddedResource Include="Model\Image\PieceImages\WB_Empty.png" />
+    <EmbeddedResource Include="Model\Image\PieceImages\WB_WhiteBishop.png" />
+    <EmbeddedResource Include="Model\Image\PieceImages\WB_WhiteKing.png" />
+    <EmbeddedResource Include="Model\Image\PieceImages\WB_WhiteKnight.png" />
+    <EmbeddedResource Include="Model\Image\PieceImages\WB_WhitePawn.png" />
+    <EmbeddedResource Include="Model\Image\PieceImages\WB_WhiteQueen.png" />
+    <EmbeddedResource Include="Model\Image\PieceImages\WB_WhiteRook.png" />
   </ItemGroup>
 
   <ItemGroup>
