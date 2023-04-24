@@ -39,7 +39,7 @@
                                                  HeightRequest="50"
                                                  WidthRequest="50"/>-->
 
-                                        <Button Text="{Binding Name}"
+                                        <ImageButton Source="{Binding ImageSrc}"
                                                 Grid.Row="{Binding PosX}"
                                                 Grid.Column="{Binding PosY}"
                                                 HeightRequest="50"
