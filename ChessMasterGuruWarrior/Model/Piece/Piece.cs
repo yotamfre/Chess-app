@@ -43,6 +43,153 @@ namespace ChessMasterGuruWarrior.Model.Piece
             return given_board;
         }
 
+        public Board.Board move(Board.Board given_board, int attemptedX, int attemptedY)
+        {
+            return null;
+        }
+
+        public ImageSource GetImageSrc()
+        {
+            if (((PosX + PosY) % 2) == 0)
+            {
+                if(IsWhite && this.GetType() == typeof(Bishop))
+                {
+                    return "ChessMasterGuruWarrior.Model.Image.WB_WhiteBishop.png";
+                }
+
+                if (IsWhite && this.GetType() == typeof(King))
+                {
+                    return "ChessMasterGuruWarrior.Model.Image.WB_WhiteKing.png";
+                }
+
+                if (IsWhite && this.GetType() == typeof(Knight))
+                {
+                    return "ChessMasterGuruWarrior.Model.Image.WB_WhiteKnight.png";
+                }
+
+                if (IsWhite && this.GetType() == typeof(Pawn))
+                {
+                    return "ChessMasterGuruWarrior.Model.Image.WB_WhitePawn.png";
+                }
+
+                if (IsWhite && this.GetType() == typeof(Queen))
+                {
+                    return "ChessMasterGuruWarrior.Model.Image.WB_WhiteQueen.png";
+                }
+
+                if (IsWhite && this.GetType() == typeof(Rook))
+                {
+                    return "ChessMasterGuruWarrior.Model.Image.WB_WhiteRook.png";
+                }
+
+                if (IsWhite == false && this.GetType() == typeof(Bishop))
+                {
+                    return "ChessMasterGuruWarrior.Model.Image.WB_BlackBishop.png";
+                }
+
+                if (IsWhite == false && this.GetType() == typeof(King))
+                {
+                    return "ChessMasterGuruWarrior.Model.Image.WB_BlackKing.png";
+                }
+
+                if (IsWhite == false && this.GetType() == typeof(Knight))
+                {
+                    return "ChessMasterGuruWarrior.Model.Image.WB_BlackKnight.png";
+                }
+
+                if (IsWhite == false && this.GetType() == typeof(Pawn))
+                {
+                    return "ChessMasterGuruWarrior.Model.Image.WB_BlackPawn.png";
+                }
+
+                if (IsWhite == false && this.GetType() == typeof(Queen))
+                {
+                    return "ChessMasterGuruWarrior.Model.Image.WB_BlackQueen.png";
+                }
+
+                if (IsWhite == false && this.GetType() == typeof(Rook))
+                {
+                    return "ChessMasterGuruWarrior.Model.Image.WB_BlackRook.png";
+                }
+
+                if (this.GetType() == typeof(EmptySquare))
+                {
+                    return "ChessMasterGuruWarrior.Model.Image.WB_Empty";
+                }
+
+                return null;
+            }
+
+            else
+            {
+                if (IsWhite && this.GetType() == typeof(Bishop))
+                {
+                    return "ChessMasterGuruWarrior.Model.Image.BB_WhiteBishop.png";
+                }
+
+                if (IsWhite && this.GetType() == typeof(King))
+                {
+                    return "ChessMasterGuruWarrior.Model.Image.BB_WhiteKing.png";
+                }
+
+                if (IsWhite && this.GetType() == typeof(Knight))
+                {
+                    return "ChessMasterGuruWarrior.Model.Image.BB_WhiteKnight.png";
+                }
+
+                if (IsWhite && this.GetType() == typeof(Pawn))
+                {
+                    return "ChessMasterGuruWarrior.Model.Image.BB_WhitePawn.png";
+                }
+
+                if (IsWhite && this.GetType() == typeof(Queen))
+                {
+                    return "ChessMasterGuruWarrior.Model.Image.BB_WhiteQueen.png";
+                }
+
+                if (IsWhite && this.GetType() == typeof(Rook))
+                {
+                    return "ChessMasterGuruWarrior.Model.Image.BB_WhiteRook.png";
+                }
+
+                if (IsWhite == false && this.GetType() == typeof(Bishop))
+                {
+                    return "ChessMasterGuruWarrior.Model.Image.BB_BlackBishop.png";
+                }
+
+                if (IsWhite == false && this.GetType() == typeof(King))
+                {
+                    return "ChessMasterGuruWarrior.Model.Image.BB_BlackKing.png";
+                }
+
+                if (IsWhite == false && this.GetType() == typeof(Knight))
+                {
+                    return "ChessMasterGuruWarrior.Model.Image.BB_BlackKnight.png";
+                }
+
+                if (IsWhite == false && this.GetType() == typeof(Pawn))
+                {
+                    return "ChessMasterGuruWarrior.Model.Image.BB_BlackPawn.png";
+                }
+
+                if (IsWhite == false && this.GetType() == typeof(Queen))
+                {
+                    return "ChessMasterGuruWarrior.Model.Image.BB_BlackQueen.png";
+                }
+
+                if (IsWhite == false && this.GetType() == typeof(Rook))
+                {
+                    return "ChessMasterGuruWarrior.Model.Image.BB_BlackRook.png";
+                }
+
+                if (this.GetType() == typeof(EmptySquare))
+                {
+                    return "ChessMasterGuruWarrior.Model.Image.BB_Empty";
+                }
+                return null;
+            }
+        }
+
     }
 }
 
