@@ -11,5 +11,10 @@ namespace ChessMasterGuruWarrior.Model.Piece
         {
             Name = "empty";
         }
+
+        public Board.Board move(Board.Board given_board, int attemptedX, int attemptedY)
+        {
+            return null;
+        }
     }
 }

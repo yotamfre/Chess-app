@@ -44,7 +44,7 @@
                                                 Grid.Column="{Binding PosY}"
                                                 HeightRequest="50"
                                                 WidthRequest="50"
-                                                Command="{Binding Path=BindingContext.PieceClicked, Source={x:Reference ItemsListView}, Mode=TwoWay}"
+                                                Command="{Binding Path=BindingContext.PieceClicked, Source={x:Reference ItemsListView2d}, Mode=TwoWay}"
                                                 CommandParameter="{Binding .}"/>
 
                                 </StackLayout>
@@ -55,7 +55,7 @@
                 </Grid>
             </DataTemplate>
 
-
+            
         </CollectionView.ItemTemplate>
     </CollectionView>
 </ContentPage>
