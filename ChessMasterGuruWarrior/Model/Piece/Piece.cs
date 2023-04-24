@@ -43,7 +43,7 @@ namespace ChessMasterGuruWarrior.Model.Piece
             return given_board;
         }
 
-        public Board.Board move(Board.Board given_board, int attemptedX, int attemptedY)
+        public virtual Board.Board move(Board.Board given_board, int attemptedX, int attemptedY)
         {
             return null;
         }
