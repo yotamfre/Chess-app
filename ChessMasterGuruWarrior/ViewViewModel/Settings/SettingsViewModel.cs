@@ -20,9 +20,18 @@ namespace ChessMasterGuruWarrior.ViewViewModel.Settings
             get { return _username; }
             set
             {
-                if (_username != value)
-                    SetProperty(ref _username, value);
-                SetProperty(ref _username, value); //SQL
+                _username = value;
+                OnPropertyChanged();
+            }
+        }
+
+        public string Email
+        {
+            get { return _email; }
+            set
+            {
+                _email = value;
+                OnPropertyChanged();
             }
         }
 

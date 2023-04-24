@@ -34,6 +34,7 @@ namespace ChessMasterGuruWarrior.ViewViewModel.Game
                     if (selectedPiece == null)
                     {
                         selectedPiece = p;
+                        Console.WriteLine(p.Name + " selected");
                     }
 
                     else
@@ -42,12 +43,16 @@ namespace ChessMasterGuruWarrior.ViewViewModel.Game
 
                         if(tryMove == null)
                         {
+                            Console.WriteLine(selectedPiece.Name + " deselected");
                             selectedPiece = null;
                         }
+
+                        //case move is legal
                         else
                         {
                             game_board = tryMove;
-                            loadBoard();
+                            //loadBoard();
+                            Console.WriteLine("move made");
                         }
                     }
                 });
