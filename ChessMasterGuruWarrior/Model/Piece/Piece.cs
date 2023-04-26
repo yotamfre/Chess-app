@@ -115,7 +115,7 @@ namespace ChessMasterGuruWarrior.Model.Piece
 
                 if (this.GetType() == typeof(EmptySquare))
                 {
-                    return "ChessMasterGuruWarrior.Model.Image.PieceImages.WB_Empty";
+                    return "ChessMasterGuruWarrior.Model.Image.PieceImages.WB_Empty.png";
                 }
 
                 return null;
