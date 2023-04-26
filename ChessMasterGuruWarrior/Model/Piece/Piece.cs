@@ -18,9 +18,9 @@ namespace ChessMasterGuruWarrior.Model.Piece
 
         public Piece(bool iswhite, int posx, int posy)
         {
-            bool IsWhite = iswhite;
-            int PosX = posx;
-            int PosY = posy;
+            IsWhite = iswhite;
+            PosX = posx;
+            PosY = posy;
 
             ImageSrc = ImageSource.FromResource(GetImagePath());
 
