@@ -47,14 +47,14 @@ namespace ChessMasterGuruWarrior.Model.Board
             board[0, 5] = new Bishop(false, 0, 5);
             board[0, 6] = new Knight(false, 0, 6);
             board[0, 7] = new Rook(false, 0, 7);
-            board[1, 0] = new Pawn(false, false, 0, 0);
-            board[1, 1] = new Pawn(false, false, 0, 1);
-            board[1, 2] = new Pawn(false, false, 0, 2);
-            board[1, 3] = new Pawn(false, false, 0, 3);
-            board[1, 4] = new Pawn(false, false, 0, 4);
-            board[1, 5] = new Pawn(false, false, 0, 5);
-            board[1, 6] = new Pawn(false, false, 0, 6);
-            board[1, 7] = new Pawn(false, false, 0, 7);
+            board[1, 0] = new Pawn(false, false, 1, 0);
+            board[1, 1] = new Pawn(false, false, 1, 1);
+            board[1, 2] = new Pawn(false, false, 1, 2);
+            board[1, 3] = new Pawn(false, false, 1, 3);
+            board[1, 4] = new Pawn(false, false, 1, 4);
+            board[1, 5] = new Pawn(false, false, 1, 5);
+            board[1, 6] = new Pawn(false, false, 1, 6);
+            board[1, 7] = new Pawn(false, false, 1, 7);
 
             //instantiates white
             board[7, 0] = new Rook(true, 7, 0);
@@ -65,14 +65,14 @@ namespace ChessMasterGuruWarrior.Model.Board
             board[7, 5] = new Bishop(true, 7, 5);
             board[7, 6] = new Knight(true, 7, 6);
             board[7, 7] = new Rook(true, 7, 7);
-            board[6, 0] = new Pawn(false, true, 7, 0);
-            board[6, 1] = new Pawn(false, true, 7, 1);
-            board[6, 2] = new Pawn(false, true, 7, 2);
-            board[6, 3] = new Pawn(false, true, 7, 3);
-            board[6, 4] = new Pawn(false, true, 7, 4);
-            board[6, 5] = new Pawn(false, true, 7, 5);
-            board[6, 6] = new Pawn(false, true, 7, 6);
-            board[6, 7] = new Pawn(false, true, 7, 7);
+            board[6, 0] = new Pawn(false, true, 6, 0);
+            board[6, 1] = new Pawn(false, true, 6, 1);
+            board[6, 2] = new Pawn(false, true, 6, 2);
+            board[6, 3] = new Pawn(false, true, 6, 3);
+            board[6, 4] = new Pawn(false, true, 6, 4);
+            board[6, 5] = new Pawn(false, true, 6, 5);
+            board[6, 6] = new Pawn(false, true, 6, 6);
+            board[6, 7] = new Pawn(false, true, 6, 7);
 
             //Determines color of empty square and instantiates it
             bool Is_White;
