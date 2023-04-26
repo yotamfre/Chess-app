@@ -40,8 +40,10 @@ namespace ChessMasterGuruWarrior.ViewViewModel.Game
                     else
                     {
                         Board tryMove = selectedPiece.move(game_board, p.PosX, p.PosY);
+                        Console.WriteLine("p is at " + p.PosX + " " + p.PosY);
+                        Console.WriteLine("selectedPiece is at " + selectedPiece.PosX + " " + selectedPiece.PosY);
 
-                        if(tryMove == null)
+                        if (tryMove == null)
                         {
                             Console.WriteLine(selectedPiece.Name + " deselected");
                             selectedPiece = null;

@@ -39,7 +39,7 @@ namespace ChessMasterGuruWarrior.Model.Board
         {
             //instantiates black
             newBoard = new Board();
-            board[0,0] = new Rook(false, 0, 0);
+            board[0, 0] = new Rook(false, 0, 0);
             board[0, 1] = new Knight(false, 0, 1);
             board[0, 2] = new Bishop(false, 0, 2);
             board[0, 3] = new Queen(false, 0, 3);
