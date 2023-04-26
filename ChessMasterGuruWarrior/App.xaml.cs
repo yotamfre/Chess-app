@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ChessMasterGuruWarrior.ViewViewModel.MainPage;
+using System;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -10,9 +11,9 @@ namespace ChessMasterGuruWarrior
         {
             InitializeComponent();
 
-            MainPage = new MainPage();
+            MainPage = new MainPageView();
 
-            MainPage = new NavigationPage(new MainPage());
+            MainPage = new NavigationPage(new MainPageView());
         }
 
         protected override void OnStart()
