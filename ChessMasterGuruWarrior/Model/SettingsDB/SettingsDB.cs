@@ -1,10 +1,12 @@
 ﻿using Plugin.Settings;
 using Plugin.Settings.Abstractions;
 using System;
+using System.Collections.Generic;
+using System.Text;
 
-namespace ChessMasterGuruWarrior.Model.Settings
+namespace ChessMasterGuruWarrior.Model.SettingsDB
 {
-    public static class Settings
+    public static class SettingsDB
     {
         private static ISettings AppSettings =>
             CrossSettings.Current;
@@ -28,3 +30,4 @@ namespace ChessMasterGuruWarrior.Model.Settings
         }
     }
 }
+

@@ -43,11 +43,6 @@
 
 
 
-
-            <Button Text="Submit"
-                    HorizontalOptions="Center"
-                    Command="{Binding OnEntryClicked}" />
-
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

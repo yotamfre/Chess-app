@@ -1,4 +1,5 @@
-﻿using ChessMasterGuruWarrior.ViewViewModel.Base;
+﻿using ChessMasterGuruWarrior.Model.SettingsDB;
+using ChessMasterGuruWarrior.ViewViewModel.Base;
 using ChessMasterGuruWarrior.ViewViewModel.MainPage;
 using Plugin.Settings;
 using Plugin.Settings.Abstractions;
@@ -14,29 +15,50 @@ namespace ChessMasterGuruWarrior.ViewViewModel.Settings
     {
         public SettingsViewModel()
         {
-            OnEntryClicked = new Command(OnEntryClickedAsync);
+            
         }
 
 
         public string Username
         {
-            get => Settings.Username;
+            get => SettingsDB.Username;
             set
             {
-                if (Settings.Username == value)
+                if (SettingsDB.Username == value)
                     return;
 
-                Settings.Username = value;
+                SettingsDB.Username = value;
                 OnPropertyChanged();
             }
 
         }
 
-
-        public ICommand OnEntryClicked { get; }
-        public void OnEntryClickedAsync(object obj)
+        public string Email
         {
-            
+            get => SettingsDB.Email;
+            set
+            {
+                if (SettingsDB.Email == value)
+                    return;
+
+                SettingsDB.Email = value;
+                OnPropertyChanged();
+            }
+
+        }
+
+        public bool EnableAutoQueen
+        {
+            get => SettingsDB.EnableAutoQueen;
+            set
+            {
+                if (SettingsDB.EnableAutoQueen == value)
+                    return;
+
+                SettingsDB.EnableAutoQueen = value;
+                OnPropertyChanged();
+            }
+
         }
 
 
