@@ -28,10 +28,12 @@ namespace ChessMasterGuruWarrior.Model.Piece
 
         public Board.Board makeMove(Board.Board given_board, int attemptedX, int attemptedY)
         {
-            PosX = attemptedX; 
-            PosY = attemptedY;
+            Board.Board attemptedBoard = given_board;
 
-            given_board.board[attemptedX, attemptedY] = this;
+            Piece oldPiece = given_board.board[attemptedX, attemptedY];
+            attemptedBoard.board[attemptedX, attemptedY] = this;
+            given_board.board[attemptedX, attemptedY] = oldPiece;
+
 
             bool is_white = false;
             if (((PosX + PosY) % 2) == 0)
@@ -39,9 +41,9 @@ namespace ChessMasterGuruWarrior.Model.Piece
                 is_white = true;
             }
 
-            given_board.board[PosX, PosY] = new EmptySquare(is_white, PosX, PosY);
+            attemptedBoard.board[PosX, PosY] = new EmptySquare(is_white, PosX, PosY);
 
-            return given_board;
+            return attemptedBoard;
         }
 
         public virtual Board.Board move(Board.Board given_board, int attemptedX, int attemptedY)
