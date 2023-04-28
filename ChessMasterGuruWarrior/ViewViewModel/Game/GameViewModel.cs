@@ -41,6 +41,7 @@ namespace ChessMasterGuruWarrior.ViewViewModel.Game
                     {
                         Board tryMove = selectedPiece.move(game_board, p.PosX, p.PosY);
                         Console.WriteLine("p is at " + p.PosX + " " + p.PosY);
+                        Console.WriteLine("selectedPiece type: " + selectedPiece.GetType());
                         Console.WriteLine("selectedPiece is at " + selectedPiece.PosX + " " + selectedPiece.PosY);
 
                         if (tryMove == null)
