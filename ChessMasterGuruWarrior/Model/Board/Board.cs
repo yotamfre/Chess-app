@@ -204,7 +204,7 @@ namespace ChessMasterGuruWarrior.Model.Board
             bool e = false;
 
             //Checks for Rook/Queen check
-            while (a < 8 && board[a, KingY].IsWhite != is_white && e == false)
+            while (a < 8 && a >= 0 && board[a, KingY].IsWhite != is_white && e == false)
             {
 
                 if((board[a, KingY].GetType() == typeof(Queen)) && (board[a, KingY].IsWhite != is_white))
@@ -231,7 +231,7 @@ namespace ChessMasterGuruWarrior.Model.Board
             d = KingY - 1;
             e = false;
 
-            while (b >= 0 && board[b, KingY].IsWhite != is_white && e == false)
+            while (b >= 0 && b < 8 && board[b, KingY].IsWhite != is_white && e == false)
             {
                 if ((board[b, KingY].GetType() == typeof(Queen)) && (board[b, KingY].IsWhite != is_white))
                 {
@@ -258,7 +258,7 @@ namespace ChessMasterGuruWarrior.Model.Board
             d = KingY - 1;
             e = false;
 
-            while (c < 8 && board[KingX, c].IsWhite != is_white && e == false)
+            while (c < 8 && c >= 0 && board[KingX, c].IsWhite != is_white && e == false)
             {
                 if ((board[KingX, c].GetType() == typeof(Queen)) && (board[KingX, c].IsWhite != is_white))
                 {
@@ -284,7 +284,7 @@ namespace ChessMasterGuruWarrior.Model.Board
             d = KingY - 1;
             e = false;
 
-            while (d >= 0 && board[KingX, d].IsWhite != is_white && e == false)
+            while (d >= 0 && d < 8 && board[KingX, d].IsWhite != is_white && e == false)
             {
                 if ((board[KingX, d].GetType() == typeof(Queen)) && (board[KingX, d].IsWhite != is_white))
                 {
@@ -310,7 +310,7 @@ namespace ChessMasterGuruWarrior.Model.Board
             d = KingY - 1;
             e = false;
 
-            while (a < 8 && board[a, c].IsWhite != is_white && c < 8 && e == false)
+            while (a >= 0 && a < 8 && c >= 0 && c < 8 && board[a, c].IsWhite != is_white && e == false)
             {
                 if ((board[a, c].GetType() == typeof(Queen)) && (board[a, c].IsWhite != is_white))
                 {
@@ -337,7 +337,7 @@ namespace ChessMasterGuruWarrior.Model.Board
             d = KingY - 1;
             e = false;
 
-            while (a < 8 && board[a, c].IsWhite != is_white && d >= 0 && e == false)
+            while (a >= 0 && a < 8 && d >= 0 && d < 8 && board[a, d].IsWhite != is_white && e == false)
             {
                 if ((board[a, d].GetType() == typeof(Queen)) && (board[a, d].IsWhite != is_white))
                 {
@@ -364,7 +364,7 @@ namespace ChessMasterGuruWarrior.Model.Board
             d = KingY - 1;
             e = false;
 
-            while (b >= 0 && board[b, c].IsWhite != is_white && c < 8)
+            while (b >= 0 && b < 8 && c >= 0 && c < 8 && board[b, c].IsWhite != is_white && e == false)
             {
                 if ((board[b, c].GetType() == typeof(Queen)) && (board[b, c].IsWhite != is_white))
                 {
@@ -391,7 +391,7 @@ namespace ChessMasterGuruWarrior.Model.Board
             d = KingY - 1;
             e = false;
 
-            while (b >= 0 && board[b, d].IsWhite != is_white && d >= 0)
+            while (b >= 0 && b < 8 && d >= 0 && d < 8 && board[b, d].IsWhite != is_white && e == false)
             {
                 if ((board[b, d].GetType() == typeof(Queen)) && (board[b, d].IsWhite != is_white))
                 {
