@@ -33,8 +33,11 @@ namespace ChessMasterGuruWarrior.ViewViewModel.Game
                 {
                     if (selectedPiece == null)
                     {
-                        selectedPiece = p;
-                        Console.WriteLine(p.Name + " selected");
+                        if (p.GetType() != typeof(EmptySquare))
+                        {
+                            selectedPiece = p;
+                            Console.WriteLine(p.Name + " selected");
+                        }
                     }
 
                     else
@@ -53,8 +56,9 @@ namespace ChessMasterGuruWarrior.ViewViewModel.Game
                         else
                         {
                             game_board = tryMove;
-                            //loadBoard();
+                            loadBoard();
                             Console.WriteLine("move made");
+                            selectedPiece = null;
                         }
                     }
                 });
@@ -63,10 +67,14 @@ namespace ChessMasterGuruWarrior.ViewViewModel.Game
 
         private void loadBoard()
         {
+            gameBoard.Clear();
+
             for (int r = 0; r < 8; r++)
             {
                 gameBoard.Add(new ObservableCollection<Piece>(game_board.getRow(r).ToList()));
             }
+
+            Console.WriteLine(game_board.board[5, 5].GetType());
         }
     }
 }

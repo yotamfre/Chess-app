@@ -16,6 +16,7 @@ namespace ChessMasterGuruWarrior.Model.Piece
         public int PosX { get; set; }
         public int PosY { get; set; }
 
+
         public Piece(bool iswhite, int posx, int posy)
         {
             IsWhite = iswhite;
@@ -26,7 +27,7 @@ namespace ChessMasterGuruWarrior.Model.Piece
 
         }
 
-        public Board.Board makeMove(Board.Board given_board, int attemptedX, int attemptedY)
+        public Board.Board makeMove(Board.Board given_board, int attemptedX, int attemptedY, bool finalmove = true)
         {
             Board.Board attemptedBoard = new Board.Board();
             attemptedBoard.board = given_board.board.Clone() as Piece[,];
@@ -40,6 +41,11 @@ namespace ChessMasterGuruWarrior.Model.Piece
             }
 
             attemptedBoard.board[PosX, PosY] = new EmptySquare(is_white, PosX, PosY);
+            if (finalmove)
+            {
+                PosX = attemptedX;
+                PosY = attemptedY;
+            }
 
             return attemptedBoard;
         }

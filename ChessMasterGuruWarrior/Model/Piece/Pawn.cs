@@ -23,7 +23,7 @@ namespace ChessMasterGuruWarrior.Model.Piece
         public override Board.Board move(Board.Board given_board, int attemptedX, int attemptedY)
         {
             //checks if the king is in check
-            if (makeMove(given_board, attemptedX, attemptedY).IsInCheck(IsWhite))
+            if (makeMove(given_board, attemptedX, attemptedY, false).IsInCheck(IsWhite))
             {
                 return null;
             }
