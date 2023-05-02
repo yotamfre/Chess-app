@@ -106,10 +106,10 @@ namespace ChessMasterGuruWarrior.Model.Piece
             if (attemptedX == PosX)
             {
                 //checks if the new position to the right of initial position
-                if (attemptedX > PosX)
+                if (attemptedY > PosY)
                 {
                     //checks all squares
-                    for (int i = 1; i < Math.Abs(attemptedX - PosX); i++)
+                    for (int i = 1; i < Math.Abs(attemptedY - PosY); i++)
                     {
 
                         if (given_board.board[PosX, PosY + i].GetType() != typeof(EmptySquare))
@@ -122,7 +122,7 @@ namespace ChessMasterGuruWarrior.Model.Piece
                 //case new position is to the left of initial position
                 else
                 {
-                    for (int i = 1; i < Math.Abs(attemptedX - PosX); i++)
+                    for (int i = 1; i < Math.Abs(attemptedY - PosY); i++)
                     {
 
                         if (given_board.board[PosX, PosY - i].GetType() != typeof(EmptySquare))
@@ -130,6 +130,8 @@ namespace ChessMasterGuruWarrior.Model.Piece
                             return null;
                         }
                     }
+                    return makeMove(given_board, attemptedX, attemptedY);
+
                 }
             }
 
@@ -137,10 +139,10 @@ namespace ChessMasterGuruWarrior.Model.Piece
             else
             {
                 //checks if the new position is above of initial position
-                if (attemptedX > PosY)
+                if (attemptedX > PosX)
                 {
                     //checks all squares
-                    for (int i = 1; i < Math.Abs(attemptedY - PosY); i++)
+                    for (int i = 1; i < Math.Abs(attemptedX - PosX); i++)
                     {
 
                         if (given_board.board[PosX - i, PosY].GetType() != typeof(EmptySquare))
@@ -153,7 +155,7 @@ namespace ChessMasterGuruWarrior.Model.Piece
                 //case new position is below initial position
                 else
                 {
-                    for (int i = 1; i < Math.Abs(attemptedY - PosY); i++)
+                    for (int i = 1; i < Math.Abs(attemptedX - PosX); i++)
                     {
 
                         if (given_board.board[PosX - i, PosY].GetType() != typeof(EmptySquare))
