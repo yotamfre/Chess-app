@@ -22,6 +22,99 @@ namespace ChessMasterGuruWarrior.Model.Piece
 
         public override Board.Board move(Board.Board given_board, int attemptedX, int attemptedY)
         {
+            Piece attemptedPiece = given_board.board[attemptedX, attemptedY];
+            bool isEmpty = attemptedPiece.GetType() == typeof(EmptySquare);
+            bool isSamePiece = (attemptedPiece.IsWhite == IsWhite) && (!isEmpty);
+            bool isOppositePiece = !(isEmpty || isSamePiece);
+
+
+            //if the pawn is white
+            if (IsWhite)
+            {
+                if ((attemptedX + 1) == PosX)
+                {
+                    //trying to move forward
+                    if (attemptedY == PosY)
+                    {
+                        if (isEmpty) 
+                        {
+                            Console.WriteLine("making move");
+                            return makeMove(given_board, attemptedX, attemptedY);
+                        }
+                        else
+                        {
+                            Console.WriteLine("isnt empty");
+                        }
+                    }
+
+                    else
+                    {
+                        Console.WriteLine("trying to move forward");
+                    }
+
+                    //trying to capture
+                    if (Math.Abs(attemptedY - PosY) == 1)
+                    {
+                        if (isOppositePiece)
+                        {
+                            return makeMove(given_board, attemptedX, attemptedY);
+                        }
+                    }
+
+                }
+                else
+                {
+                    Console.WriteLine("x: " + PosX + ", " + attemptedX);
+                    Console.WriteLine("y: " + PosY + ", " + attemptedY);
+                    Console.WriteLine("white and move is legal");
+                }
+            }
+
+            else
+            {
+                if ((attemptedX - 1) == PosX)
+                {
+                    //trying to move forward
+                    if (attemptedY == PosY)
+                    {
+                        if (isEmpty)
+                        {
+                            return makeMove(given_board, attemptedX, attemptedY);
+                        }
+                        else 
+                        { 
+                            Console.WriteLine("isnt empty"); 
+                        }
+                    }
+
+                    else
+                    {
+                        Console.WriteLine("trying to move forward");
+                    }
+
+                    //trying to capture
+                    if (Math.Abs(attemptedY - PosY) == 1)
+                    {
+                        if (isOppositePiece)
+                        {
+                            return makeMove(given_board, attemptedX, attemptedY);
+                        }
+                    }
+
+                }
+                else
+                {
+                    Console.WriteLine("x: " + PosX + ", " + attemptedX);
+                    Console.WriteLine("y: " + PosY + ", " + attemptedY);
+                    Console.WriteLine("white and move is legal");
+                }
+            }
+
+            return null;
+        }
+
+        public Board.Board oldMove(Board.Board given_board, int attemptedX, int attemptedY)
+        { 
             //checks if the king is in check
             if (makeMove(given_board, attemptedX, attemptedY, false).IsInCheck(IsWhite))
             {

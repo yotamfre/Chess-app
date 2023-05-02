@@ -45,6 +45,8 @@ namespace ChessMasterGuruWarrior.Model.Piece
             {
                 PosX = attemptedX;
                 PosY = attemptedY;
+
+                ImageSrc = ImageSource.FromResource(GetImagePath());
             }
 
             return attemptedBoard;
