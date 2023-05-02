@@ -28,12 +28,10 @@ namespace ChessMasterGuruWarrior.Model.Piece
 
         public Board.Board makeMove(Board.Board given_board, int attemptedX, int attemptedY)
         {
-            Board.Board attemptedBoard = given_board;
+            Board.Board attemptedBoard = new Board.Board();
+            attemptedBoard.board = given_board.board.Clone() as Piece[,];
 
-            Piece oldPiece = given_board.board[attemptedX, attemptedY];
             attemptedBoard.board[attemptedX, attemptedY] = this;
-            given_board.board[attemptedX, attemptedY] = oldPiece;
-
 
             bool is_white = false;
             if (((PosX + PosY) % 2) == 0)
