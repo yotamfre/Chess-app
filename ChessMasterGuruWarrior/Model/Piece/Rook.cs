@@ -59,6 +59,8 @@ namespace ChessMasterGuruWarrior.Model.Piece
                             return null;
                         }
                     }
+                    return makeMove(given_board, attemptedX, attemptedY);
+
                 }
             }
 
