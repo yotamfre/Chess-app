@@ -32,7 +32,7 @@ namespace ChessMasterGuruWarrior.Model.Piece
             }
 
             //checks if attempted move is 1 square away from the king in any direction
-            if ((Math.Abs(PosX - attemptedX) == 1) && (Math.Abs(PosY - attemptedY) == 1))
+            if ((Math.Abs(PosX - attemptedX) == 1) || (Math.Abs(PosY - attemptedY) == 1))
             {
                 return makeMove(given_board, attemptedX, attemptedY);
             }
