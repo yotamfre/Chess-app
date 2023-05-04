@@ -28,6 +28,11 @@ namespace ChessMasterGuruWarrior.Model.Piece
             bool isOppositePiece = !(isEmpty || isSamePiece);
 
 
+            if (makeMove(given_board, attemptedX, attemptedY, false).IsInCheck(IsWhite))
+            {
+                return null;
+            }
+
             //if the pawn is white
             if (IsWhite)
             {
@@ -38,18 +43,16 @@ namespace ChessMasterGuruWarrior.Model.Piece
                     {
                         if (isEmpty) 
                         {
-                            Console.WriteLine("making move");
+                            HasMoved = true;
                             return makeMove(given_board, attemptedX, attemptedY);
                         }
                         else
                         {
-                            Console.WriteLine("isnt empty");
                         }
                     }
 
                     else
                     {
-                        Console.WriteLine("trying to move forward");
                     }
 
                     //trying to capture
@@ -57,6 +60,7 @@ namespace ChessMasterGuruWarrior.Model.Piece
                     {
                         if (isOppositePiece)
                         {
+                            HasMoved = true;
                             return makeMove(given_board, attemptedX, attemptedY);
                         }
                     }
@@ -64,9 +68,15 @@ namespace ChessMasterGuruWarrior.Model.Piece
                 }
                 else
                 {
-                    Console.WriteLine("x: " + PosX + ", " + attemptedX);
-                    Console.WriteLine("y: " + PosY + ", " + attemptedY);
-                    Console.WriteLine("white and move is legal");
+                    //2 square move
+                    if ((!HasMoved) && ((attemptedX + 2) == PosX) && (attemptedY == PosY))
+                    {
+                        if (isEmpty && (given_board.board[attemptedX + 1, attemptedY].GetType() == typeof(EmptySquare)))
+                        {
+                            HasMoved = true;
+                            return makeMove(given_board, attemptedX, attemptedY);
+                        }
+                    }
                 }
             }
 
@@ -79,17 +89,16 @@ namespace ChessMasterGuruWarrior.Model.Piece
                     {
                         if (isEmpty)
                         {
+                            HasMoved = true;
                             return makeMove(given_board, attemptedX, attemptedY);
                         }
                         else 
                         { 
-                            Console.WriteLine("isnt empty"); 
                         }
                     }
 
                     else
                     {
-                        Console.WriteLine("trying to move forward");
                     }
 
                     //trying to capture
@@ -97,6 +106,7 @@ namespace ChessMasterGuruWarrior.Model.Piece
                     {
                         if (isOppositePiece)
                         {
+                            HasMoved = true;
                             return makeMove(given_board, attemptedX, attemptedY);
                         }
                     }
@@ -104,11 +114,18 @@ namespace ChessMasterGuruWarrior.Model.Piece
                 }
                 else
                 {
-                    Console.WriteLine("x: " + PosX + ", " + attemptedX);
-                    Console.WriteLine("y: " + PosY + ", " + attemptedY);
-                    Console.WriteLine("white and move is legal");
+                    //2 square move
+                    if ((!HasMoved) && ((attemptedX - 2) == PosX) && (attemptedY == PosY))
+                    {
+                        if (isEmpty && (given_board.board[attemptedX - 1, attemptedY].GetType() == typeof(EmptySquare)))
+                        {
+                            HasMoved = true;
+                            return makeMove(given_board, attemptedX, attemptedY);
+                        }
+                    }
                 }
             }
+
 
             return null;
         }

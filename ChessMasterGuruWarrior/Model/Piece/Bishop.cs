@@ -36,7 +36,7 @@ namespace ChessMasterGuruWarrior.Model.Piece
             }
 
             //checks if move is diagonal
-            if (Math.Abs(attemptedX - attemptedY) == Math.Abs(PosX - PosY))
+            if ((Math.Abs(attemptedX - attemptedY) == Math.Abs(PosX - PosY)) || ((attemptedX + attemptedY) == (PosX + PosY)))
             {
                 //checks if the move is in a positive diagonal
                 if ((attemptedY - PosY) * (attemptedX - PosX) > 0)
@@ -50,6 +50,7 @@ namespace ChessMasterGuruWarrior.Model.Piece
 
                             if (given_board.board[PosX + i, PosY + i].GetType() != typeof(EmptySquare))
                             {
+                                Console.WriteLine("above in positive diagonal");
                                 return null;
 
                             }
@@ -64,6 +65,7 @@ namespace ChessMasterGuruWarrior.Model.Piece
 
                             if (given_board.board[PosX - i, PosY - i].GetType() != typeof(EmptySquare))
                             {
+                                Console.WriteLine("below in positive diagonal");
                                 return null;
 
                             }
@@ -80,9 +82,11 @@ namespace ChessMasterGuruWarrior.Model.Piece
                         //checks all the places in that diagonal
                         for (int i = 1; i < Math.Abs(attemptedX - PosX); i++)
                         {
+                            Console.WriteLine("-x in negative diagonal + 1");
 
                             if (given_board.board[PosX + i, PosY - i].GetType() != typeof(EmptySquare))
                             {
+                                Console.WriteLine("+x in negative diagonal");
                                 return null;
 
                             }
@@ -94,9 +98,11 @@ namespace ChessMasterGuruWarrior.Model.Piece
                     {
                         for (int i = 1; i < Math.Abs(attemptedX - PosX); i++)
                         {
+                            Console.WriteLine("-x in negative diagonal + 1");
 
                             if (given_board.board[PosX - i, PosY + i].GetType() != typeof(EmptySquare))
                             {
+                                Console.WriteLine("-x in negative diagonal");
                                 return null;
 
                             }
@@ -106,6 +112,7 @@ namespace ChessMasterGuruWarrior.Model.Piece
                 }
             }
 
+            Console.WriteLine("got to the end");
             return null;
         }
     }
