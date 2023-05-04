@@ -14,6 +14,7 @@ namespace ChessMasterGuruWarrior.ViewViewModel.Game
         private Board game_board { get; set; }
         public ObservableCollection<ObservableCollection<Piece>> gameBoard { get; }
         private Piece selectedPiece { get; set; }
+        private bool isWhiteToMove { get; set; }
 
 
         public GameViewModel()
@@ -23,6 +24,8 @@ namespace ChessMasterGuruWarrior.ViewViewModel.Game
 
             gameBoard = new ObservableCollection<ObservableCollection<Piece>>();
             this.loadBoard();
+
+            isWhiteToMove = true;
         }
 
         public Command<Piece> PieceClicked 
@@ -33,7 +36,7 @@ namespace ChessMasterGuruWarrior.ViewViewModel.Game
                 {
                     if (selectedPiece == null)
                     {
-                        if (p.GetType() != typeof(EmptySquare))
+                        if ((p.GetType() != typeof(EmptySquare)) && (p.IsWhite == isWhiteToMove))
                         {
                             selectedPiece = p;
                             Console.WriteLine(p.Name + " selected");
@@ -46,8 +49,6 @@ namespace ChessMasterGuruWarrior.ViewViewModel.Game
 
                         if (tryMove == null)
                         {
-                            //Console.WriteLine("type of p: " + p.GetType());
-                            //Console.WriteLine(p.GetType() == typeof(EmptySquare));
                             Console.WriteLine(selectedPiece.Name + " deselected");
                             selectedPiece = null;
                         }
@@ -57,8 +58,8 @@ namespace ChessMasterGuruWarrior.ViewViewModel.Game
                         {
                             game_board = tryMove;
                             loadBoard();
-                            Console.WriteLine("move made");
                             selectedPiece = null;
+                            isWhiteToMove = !isWhiteToMove;
                         }
                     }
                 });
