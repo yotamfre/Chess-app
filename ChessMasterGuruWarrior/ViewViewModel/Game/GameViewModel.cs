@@ -1,5 +1,6 @@
 ﻿using ChessMasterGuruWarrior.Model.Board;
 using ChessMasterGuruWarrior.Model.Piece;
+using ChessMasterGuruWarrior.Model.SettingsDB;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -26,6 +27,15 @@ namespace ChessMasterGuruWarrior.ViewViewModel.Game
             this.loadBoard();
 
             isWhiteToMove = true;
+        }
+
+        public string Username
+        {
+            get => SettingsDB.Username;
+        }
+        public string Email
+        {
+            get => SettingsDB.Email;
         }
 
         public Command<Piece> PieceClicked 

@@ -8,33 +8,34 @@
         <Image Source="{Binding ImageSrc}"/>
     </StackLayout>-->
 
-    <CollectionView x:Name="ItemsListView2d"
+    <StackLayout>
+        <CollectionView x:Name="ItemsListView2d"
                     ItemsSource="{Binding gameBoard, Mode=TwoWay}">
-        <CollectionView.ItemTemplate>
+            <CollectionView.ItemTemplate>
 
-            <DataTemplate x:Name ="gameBoardView">
+                <DataTemplate x:Name ="gameBoardView">
 
-                <Grid>
-                    <Grid.RowDefinitions>
-                        <RowDefinition Height="50"/>
-                    </Grid.RowDefinitions>
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="Auto"/>
-                    </Grid.ColumnDefinitions>
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="50"/>
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto"/>
+                        </Grid.ColumnDefinitions>
 
 
 
-                    <CollectionView x:Name="ItemsListView"
+                        <CollectionView x:Name="ItemsListView"
                                         ItemsSource= "{Binding}"
                                         ItemsLayout="HorizontalList">
-                        
-                        
-                        <CollectionView.ItemTemplate>
-                            
-                            <DataTemplate x:DataType="model:Piece">
 
-                                <StackLayout>
-                                    <!--<ImageButton Source="{Binding ImageSrc}"
+
+                            <CollectionView.ItemTemplate>
+
+                                <DataTemplate x:DataType="model:Piece">
+
+                                    <StackLayout>
+                                        <!--<ImageButton Source="{Binding ImageSrc}"
                                                  Aspect="Fill"
                                                  HeightRequest="50"
                                                  WidthRequest="50"/>-->
@@ -47,15 +48,27 @@
                                                 Command="{Binding Path=BindingContext.PieceClicked, Source={x:Reference ItemsListView2d}, Mode=TwoWay}"
                                                 CommandParameter="{Binding .}"/>
 
-                                </StackLayout>
-                            </DataTemplate>
-                        </CollectionView.ItemTemplate>
+                                    </StackLayout>
+                                </DataTemplate>
+                            </CollectionView.ItemTemplate>
 
-                    </CollectionView>
-                </Grid>
-            </DataTemplate>
+                        </CollectionView>
+                    </Grid>
+                </DataTemplate>
 
-            
-        </CollectionView.ItemTemplate>
-    </CollectionView>
+
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+
+        <Label Text="Username:"/>
+        
+        <Label Text="{Binding Username}"
+               TextColor="Black"/>
+        
+        <Label Text="Email:"/>
+
+        <Label Text="{Binding Email}"
+               TextColor="Black"/>
+
+    </StackLayout>
 </ContentPage>
